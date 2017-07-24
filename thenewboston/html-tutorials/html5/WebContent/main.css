@@ -1,0 +1,32 @@
+
+
+h1.green {
+	color:green;
+}
+
+p[name] {
+	font-size:22px;
+	font-family: Georgia, Serif;
+}
+
+#tuna {
+	color:red;
+	font-family: times, courier, arial;
+	font-size: 34px;
+}
+p:nth-child(odd) {
+	color:#0000ff;
+}
+
+p:nth-child(even) {
+	color:red;
+}
+
+.blue {
+	color:blue;
+}
+
+p[name$="ky"] {
+	color:grey;
+}
+

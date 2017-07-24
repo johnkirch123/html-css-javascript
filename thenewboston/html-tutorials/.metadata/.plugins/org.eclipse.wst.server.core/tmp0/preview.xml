@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="html5" name="html5" path="C:/Users/John/Desktop/Programming/html-css-javascript/thenewboston/html-tutorials/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/html5" type="j2ee"/>
+</server>

@@ -1,4 +1,4 @@
-
+* {color:blue;}
 
 h1.green {
 	color:green;
@@ -14,13 +14,20 @@ p[name] {
 	font-family: times, courier, arial;
 	font-size: 34px;
 }
-p:nth-child(odd) {
+
+.not-child {
+	<!-- color overidden by p:nth-child -->
+	color: blue;
+	font-size:20px;
+} 
+
+/*p:nth-child(odd) {
 	color:#0000ff;
 }
 
 p:nth-child(even) {
 	color:red;
-}
+}*/
 
 .blue {
 	color:blue;
@@ -30,3 +37,10 @@ p[name$="ky"] {
 	color:grey;
 }
 
+:not(.child) {
+	color:blue;
+}
+
+div > p {
+	color:orange;
+}

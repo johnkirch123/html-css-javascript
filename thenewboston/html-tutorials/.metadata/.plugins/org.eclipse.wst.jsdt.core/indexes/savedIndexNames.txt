@@ -1,8 +1,5 @@
 INDEX VERSION 1.4+C:\Users\John\Desktop\Programming\html-css-javascript\thenewboston\html-tutorials\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3731336363.index
-902900483.index
+851288459.index
+1877994499.index
 1483070099.index
 4063523349.index
-2718446978.index
-744144889.index
-1942915271.index

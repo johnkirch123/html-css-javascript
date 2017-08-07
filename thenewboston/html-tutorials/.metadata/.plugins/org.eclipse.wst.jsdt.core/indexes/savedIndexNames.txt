@@ -1,17 +1,14 @@
 INDEX VERSION 1.4+C:\Users\John\Desktop\Programming\html-css-javascript\thenewboston\html-tutorials\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3941777900.index
-1877994499.index
-3981930004.index
-744144889.index
-871943807.index
-3941777900.index
-4232416575.index
-2008262600.index
-2894223981.index
-1483070099.index
-3731336363.index
-1176305728.index
 2823078421.index
+3941777900.index
 2718446978.index
+1176305728.index
+4232416575.index
+1877994499.index
 1942915271.index
+3731336363.index
+2008262600.index
+1483070099.index
+744144889.index
 902900483.index
+2894223981.index

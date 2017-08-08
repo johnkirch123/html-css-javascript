@@ -74,7 +74,7 @@ body{
 .main-color-bg{
   background-color: #e74c3c !important;
   border-color: #c0392b !important;
-  color: white;
+  color: white !important;
 }
 
 /* Header */
@@ -97,6 +97,29 @@ body{
 
 .breadcrumb a{
   color:#333333;
+}
+
+/* Progress Bars */
+.progress-bar{
+  background: #333333;
+  color: white;
+}
+
+.dash-box{
+  text-align: center;
+}
+
+#login{
+  margin-top: 40px;
+}
+
+/* Footer */
+#footer{
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
 }
 
 

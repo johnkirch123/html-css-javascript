@@ -9,7 +9,9 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,22 +20,146 @@
     <![endif]-->
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top"> <!-- navbar-static-top navbar-inverse-->
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://www.stewardsofearth.org" target="_blank">John Kirch</a>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#myModal">Services</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Learn <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Examples</li>
+                <li><a href="#">C++</a></li>
+                <li><a href="#">Java</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Tutorials</li>
+                <li><a href="#">C++</a></li>
+                <li><a href="#">Java</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Hello All, welcome to my page!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.</p>
+        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon glyphicon-thumbs-up" style="font-size:20px; color: black;"></span> Click me!</button>
+        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon glyphicon glyphicon-cutlery" style="font-size:20px;"></span></button>
+      </div>
+      <div class="row">
+        <div class="panel panel-primary"> <!-- default, primary, success, warning, info -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Quote of the Day!</h3>
+          </div>
+          <div class="panel-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.
+          </div>
+          <div class="panel-footer">
+            - John Kirch
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
+      <div class="page-header">
+        <h1>Button</h1>
+      </div>
+      <p>
+        <button type="button" class="btn btn-default btn-sm">Default</button>
+        <button type="button" class="btn btn-primary btn-lg">Primary</button>
+        <button type="button" class="btn btn-success btn-xs">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+      </p>
+    </div>
+
+    <div class="container">
+
+      <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+           <ol class="carousel-indicators">
+               <li data-target="#carousel" data-slide-to="0" class="active"></li>
+               <li data-target="#carousel" data-slide-to="1"></li>
+               <li data-target="#carousel" data-slide-to="2"></li>
+           </ol>
+           <div class="carousel-inner">
+               <div class="item active">
+                   <img src="../img/showcase.jpg" alt="Slide 1">
+                   <div class="carousel-caption">
+                     <h1>Help us survive</h1>
+                   </div>
+               </div>
+               <div class="item">
+                   <img src="../img/showcase.jpg" alt="Slide 2">
+                   <div class="carousel-caption">
+                     <h1>Look at this</h1>
+                   </div>
+               </div>
+               <div class="item">
+                   <img src="../img/showcase.jpg" alt="Slide 3">
+                   <div class="carousel-caption">
+                     <h1>We can make it</h1>
+                   </div>
+               </div>
+           </div>
+           <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left"></span>
+           </a>
+           <a class="right carousel-control" href="#carousel" role="button" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-right"></span>
+           </a>
+       </div>
+       <br />
+       <div class="alert alert-danger">
+         <a href="#" class="close" data-dimiss="alert" aria-label="close">&times;</a>
+       </div>
+
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-4 well">
+          <a href="#" class="tumbnail"><img src="../img/showcase.jpg" alt="tutorial" style="width: 100%;" /></a>
+          <h3>Head 1</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.
           </p>
+          <button type="button" class="btn btn-danger">Thank you</button>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4 well">
+          <a href="#" class="tumbnail"><img src="../img/showcase.jpg" alt="tutorial" style="width: 100%;" /></a>
+          <h3>Head 2</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.
           </p>
+          <button type="button" class="btn btn-success">Thank you</button>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4 well">
+          <a href="#" class="tumbnail"><img src="../img/showcase.jpg" alt="tutorial" style="width: 100%;" /></a>
+          <h3>Head 3</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.
           </p>
+          <button type="button" class="btn btn-info">Thank you</button>
         </div>
       </div>
       <div class="row">
@@ -50,6 +176,100 @@
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus molestie, commodo nisl non, tristique dui. Nam laoreet mi sit amet dui tincidunt porttitor. Proin eu sem arcu. Nam ultrices vitae orci sagittis tincidunt. Aliquam vitae turpis est. Sed vehicula sodales odio ac molestie. Phasellus et leo quam.
         </p>
+      </div>
+
+      <a href="#">Likes <span class="badge">10</span></a>
+      <a href="#">Comments <span class="badge">20</span></a>
+      <button type="button" class="btn btn-success">Likes <span class="badge">100</span></button>
+
+      <h1>Likes <span class="label label-primary">Please</span></h1>
+      <h2>Likes <span class="label label-primary">Please</span></h2>
+      <h3>Likes <span class="label label-primary">Please</span></h3>
+      <h4>Likes <span class="label label-primary">Please</span></h4>
+      <h5>Likes <span class="label label-primary">Please</span></h5>
+      <h6>Likes <span class="label label-primary">Please</span></h6>
+
+      <span class="label label-default">Example Text</span>
+
+      <button type="button" class="btn  btn-danger" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="modal-title">
+                Modal Header
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+            </div>
+            <div class="modal-body">
+              This is the body of the modal.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="email">Email : </label>
+          <input type="email" class="form-control" id="email" />
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password : </label>
+          <input type="password" class="form-control" id="pwd" />
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" />Click me</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="email" class="control-label col-sm-2">Email : </label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd" class="control-label col-sm-2">Password : </label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="pwd" />
+          </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label><input type="checkbox" />Click me</label>
+          </div>
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <div class="navbar navbar-inverse navbar-static-bottom">
+      <div class="container">
+        <div class="navbar-text pull-left">
+          <p>Copyright &copy; 2017</p>
+        </div>
+        <div class="navbar-text pull-right">
+          <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+        </div>
+        <div class="navbar-text pull-right">
+          <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+        </div>
+        <div class="navbar-text pull-right">
+          <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

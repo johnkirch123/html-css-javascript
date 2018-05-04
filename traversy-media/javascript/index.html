@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Learning Javascript</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="heading">Learning Javascript</h1>
+      <p>With Brad Traversy</p>
+    </div>
+    <div class="container">
+
+      <div class="container">
+        <button onclick="doClick()">Click Me</button>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <h1 id="time"></h1>
+      <button onclick="showDate()">Show Date</button>
+    </div>
+
+    <form action="something.php" method="post" name="myForm" onsubmit="return validatedForm()">
+      <div>
+        <label>First Name</label>
+        <input type="text" name="firstName" id="firstName">
+      </div>
+      <br>
+      <div>
+        <label>Last Name</label>
+        <input type="text" name="lastName" id="lastName">
+      </div>
+      <br>
+      <div>
+        <label>Background</label>
+        <select name="background" id="background" onchange="changeBackground(this)">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <!-- Start of the javascript -->
+    <script type="text/javascript">
+
+      function validatedForm() {
+        var firstName = document.forms["myForm"]["firstName"].value;
+
+        if(firstName == null || firstName == "") {
+          alert("First name is required");
+          return false;
+        }
+      }
+
+      function changeBackground(x) {
+        console.log(x.value);
+        var heading = document.getElementById('heading');
+        heading.style.color = x.value;
+      }
+
+
+      function showDate(){
+        var date = document.getElementById('time');
+        time.innerHTML = Date();
+      }
+
+      function doClick(){
+        alert('You Clicked!');
+      }
+
+      var colors = ['red', 'blue', 'green', 'orange'];
+      colors.push('purple');
+      alert(colors[4]);
+
+      function Fruit(name, color, shape) {
+        this.name = name;
+        this.color = color;
+        this.shape = shape;
+
+        this.describe = function(){
+          return 'A ' + this.name + ' is the color ' + this.color + ' and is the' +
+          ' shape ' + this.shape;
+        }
+      }
+
+      var apple = new Fruit('apple', 'red', 'round');
+      var melon = new Fruit('melon', 'green', 'round');
+
+      console.log(melon.describe());
+
+      var users = [
+        {
+          name: 'John Doe',
+          age: 30
+        },
+        {
+          name: 'Shelly Doe',
+          age: 55
+        },
+        {
+          name: 'Jack Doe',
+          age: 21
+        }
+      ];
+      console.log(users[0].name);
+    </script>
+  </body>
+</html>

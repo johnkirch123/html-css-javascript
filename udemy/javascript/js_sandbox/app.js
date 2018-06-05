@@ -1,23 +1,38 @@
-// Log to console
-console.log("Hello World");
-console.log(123);
-console.log(true);
-var greeting = "Hello";
-console.log(greeting);
-console.log([1, 2, 3, 4]);
-console.log({ a: 1, b: 2 });
-console.table({ a: 1, b: 2 });
+let val;
 
-console.error("This is some error");
-console.clear();
-console.warn("This is a warning");
-console.time("Hello");
+// Number to String
+val = String(5);
+val = String(4 + 4);
+// Bool to String
+val = String(true);
+// Date to String
+val = String(new Date());
+// Array to String
+val = String([1, 2, 3, 4]);
 
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
-console.timeEnd("Hello");
+//toString()
+val = (5).toString();
+val = true.toString();
+
+// String to Number
+val = Number("5");
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number("hello"); // NaN - Not a Number
+
+val = parseInt("100");
+val = parseFloat("100.11");
+
+// Output
+console.log(val);
+console.log(typeof val);
+// console.log(val.length);
+console.log(val.toFixed(2));
+
+const val1 = "5";
+const val2 = 6;
+const sum = val1 + val2;
+
+console.log(sum); // Answer is type coercion
+console.log(typeof sum);

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forms Exercise</title>
+</head>
+
+<body>
+  <h1>Register</h1>
+  <form>
+    <label for="firstName">First Name: </label>
+    <input id="firstName" type="text" placeholder="John" required>
+    <label for="lastName">Last Name: </label>
+    <input id="lastName" type="text" placeholder="Smith" required>
+
+    <div>
+      <label for="male">Male </label>
+      <input id="male" name="gender" type="radio" value="male">
+      <label for="female">Female</label>
+      <input id="female" name="gender" type="radio" value="female">
+      <label for="other">Other</label>
+      <input id="other" name="gender" type="radio" value="other">
+    </div>
+
+    <div>
+      <label for="email">Email: </label>
+      <input id="email" type="email" placeholder="your email" required>
+      <label for="password">Password: </label>
+      <input name="password" type="password" pattern=".{5,10}" required title="5 to 10 characters">
+    </div>
+
+    <div>
+      <label for="birthday">Birthday: </label>
+      <select name="month">
+        <option value="Month">Month</option>
+        <option value="Month">January</option>
+        <option value="Month">February</option>
+      </select>
+      <select name="day">
+        <option value="Day">Day</option>
+        <option value="Month">1</option>
+        <option value="Month">2</option>
+      </select>
+      <select name="year">
+        <option value="Year">Year</option>
+        <option value="Month">1980</option>
+        <option value="Month">1979</option>
+      </select>
+    </div>
+
+    <div>
+      <p style="display: inline;">I agree to the terms and conditions</p>
+      <label for="terms">Yes</label>
+      <input name="terms" type="radio" value="yes">
+      <label for="terms">No</label>
+      <input name="terms" type="radio" value="no">
+    </div>
+
+
+    <button>Submit</button>
+  </form>
+</body>
+
+</html>

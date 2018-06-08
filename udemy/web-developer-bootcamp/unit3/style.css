@@ -1,8 +1,17 @@
 body {
-    padding: 10px;
-    margin: 0px;
+  padding: 10px;
+  margin: 0px;
 }
 
 h6 {
-    background-color: aqua;
+  background-color: aqua;
+}
+
+img {
+  max-height: 50px;
+  padding: 5px;
+}
+
+td {
+  text-align: center;
 }

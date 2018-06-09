@@ -1,0 +1,11 @@
+p {
+  width: 50%;
+
+  background: coral;
+  border: 2px solid blue;
+
+  padding: 10px;
+  margin: 20px auto;
+
+  text-align: center;
+}

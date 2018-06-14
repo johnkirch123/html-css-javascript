@@ -1,0 +1,70 @@
+body {
+  background-color: #232323;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  color: #fff;
+  line-height: 1.1;
+  text-align: center;
+  background: steelblue;
+  margin: 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  font-weight: 700;
+  color: steelblue;
+  letter-spacing: 1px;
+  font-size: inherit;
+  transition: all 0.3s;
+  outline: none;
+}
+
+button:hover {
+  color: #fff;
+  background: steelblue;
+}
+
+.square {
+  width: 30%;
+  background: purple;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 15%;
+  transition: 0.6s;
+}
+
+.selected {
+  color: #fff;
+  background: steelblue;
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
+}
+
+#container {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#stripe {
+  background-color: #fff;
+  height: 30px;
+  text-align: center;
+}
+
+#colorDisplay {
+  font-size: 200%;
+}

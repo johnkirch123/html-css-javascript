@@ -4,6 +4,7 @@ body {
   background: -ms-linear-gradient(90deg, #ed4264 10%, #ffedbc 90%);
   background: -o-linear-gradient(90deg, #ed4264 10%, #ffedbc 90%);
   background: linear-gradient(90deg, #ed4264 10%, #ffedbc 90%);
+  font-family: "Roboto";
 }
 
 h1 {
@@ -16,23 +17,6 @@ h1 {
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Roboto";
-}
-
-li {
-  background-color: white;
-  height: 40px;
-  line-height: 40px;
-  color: #666;
-}
-
 span {
   background-color: #e74c3c;
   height: 40px;
@@ -43,6 +27,19 @@ span {
   display: inline-block;
   transition: 0.2s linear;
   opacity: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
 }
 
 li:hover span {
@@ -70,13 +67,6 @@ input:focus {
   outline: none;
 }
 
-#container {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  width: 360px;
-  background-color: #f7f7f7;
-  margin: 100px auto;
-}
-
 .completed {
   color: gray;
   text-decoration: line-through;
@@ -84,4 +74,11 @@ input:focus {
 
 .fa-plus {
   float: right;
+}
+
+#container {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  background-color: #f7f7f7;
+  margin: 100px auto;
 }

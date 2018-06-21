@@ -1,9 +1,11 @@
 body {
   height: 1200px;
+  background-color: #333;
 }
 
 nav {
   box-shadow: 3px 3px 15px -5px #000;
+  background-color: #fff;
 }
 
 nav ul li a {
@@ -13,4 +15,46 @@ nav ul li a {
 nav ul li {
   padding-left: 2em;
   font-size: 1.2em;
+}
+
+.slides {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  padding: 0 auto;
+  margin-bottom: 10em;
+  margin-right: 5em;
+}
+
+.carousel-caption i {
+  font-size: 15em;
+  padding-left: 0.5em;
+}
+
+.fa-js {
+  color: #edd832;
+}
+
+.fa-css3 {
+  color: #35a8db;
+}
+
+.fa-html5 {
+  color: #e44d26;
+}
+
+#showcase {
+  margin-top: 100px;
+}
+
+.primary-overlay {
+  background-color: rgba(75, 66, 244, 0.5);
+  z-index: 2;
+}
+
+.carousel .carousel-item img {
+  max-height: 768px;
+  min-width: auto;
 }

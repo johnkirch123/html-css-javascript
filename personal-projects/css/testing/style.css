@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  height: 2000px;
+}
+
+div {
+  border: 2px solid #333;
+}
+
+p {
+  color: #cecece;
+}
+
+h1 {
+  position: relative;
+  color: #cecece;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: blueviolet;
+  float: left;
+  display: flex;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin: auto 0;
+}
+
+.content {
+  width: 100%;
+}
+
+/* still an block level element that is floated left, area is still taken by 
+the div area and background color is moved relative to that position */
+.box1 {
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+
+/* taken completely out of the flow of elements and fixed to the page */
+.box2 {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+}

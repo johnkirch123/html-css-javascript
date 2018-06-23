@@ -16,6 +16,19 @@
 // document.querySelectorAll("div").forEach(d => {
 //   d.style.backgroundColor = getRandomColor();
 // });
+document.addEventListener("click", function(event) {
+  var fadeTarget = event.target;
+  var fadeEffect = setInterval(function() {
+    if (!fadeTarget.style.opacity) {
+      fadeTarget.style.opacity = 1;
+    }
+    if (fadeTarget.style.opacity > 0) {
+      fadeTarget.style.opacity -= 0.1;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 200);
+});
 
 function getRandomColor() {
   var letters = "0123456789ABCDEF";

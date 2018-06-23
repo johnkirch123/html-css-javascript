@@ -19,7 +19,6 @@ h1 {
 .box {
   height: 200px;
   width: 200px;
-  background-color: blueviolet;
   float: left;
   display: flex;
   margin-right: 5%;
@@ -44,4 +43,28 @@ the div area and background color is moved relative to that position */
   position: fixed;
   top: 100px;
   left: 100px;
+}
+
+/* position relative to the parent document, takes it out of the flow of the document */
+.box3 {
+  position: absolute;
+  margin: 300px 300px;
+}
+
+.box4 {
+  text-transform: uppercase;
+  width: 200px;
+  height: 200px;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* The animation code */
+@keyframes example {
+  from {
+    background-color: red !important;
+  }
+  to {
+    background-color: yellow;
+  }
 }

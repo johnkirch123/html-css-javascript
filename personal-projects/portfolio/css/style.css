@@ -1,0 +1,51 @@
+nav {
+  max-height: 50px;
+  background-color: #fff;
+}
+
+nav h3 {
+  color: #333;
+}
+
+nav ul li a {
+  color: #333;
+}
+
+h1 {
+  color: #443220;
+}
+
+img {
+}
+
+.navbar {
+  box-shadow: 2px 2px 15px #000;
+}
+
+.left-showcase {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.primary-overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 600px;
+  padding: 0 auto;
+  background-color: rgba(0, 153, 255, 0.5); /* Black background with opacity */
+  z-index: 1;
+}
+
+#showcase .container {
+  margin-top: 50px;
+  margin-bottom: 500px;
+  overflow: none;
+  background-image: url("https://images.unsplash.com/photo-1506526794364-ba711a0d97fc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=58b59efbf7d9aa9dc6cce27b23e0c563&auto=format&fit=crop&w=634&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  height: 600px;
+  max-width: 100%;
+}

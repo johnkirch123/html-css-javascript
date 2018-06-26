@@ -17,7 +17,7 @@ li a {
   color: #333;
   width: 196px;
   margin-top: 0;
-  border-bottom: 1px solid #96bf1f;
+  border-bottom: 1px solid #333;
   -moz-transition: background-color 0.3s ease-in;
   -webkit-transition: background-color 0.3s ease-in;
   -o-transition: background-color 0.3s ease-in;
@@ -25,7 +25,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #96c11f;
+  background-color: #333;
   color: #fff;
   -moz-transition: background-color 0.3s;
   -webkit-transition: background-color 0.3s;
@@ -45,6 +45,10 @@ li a:hover {
 
 .carousel-icon i {
   position: relative;
+}
+
+.card-img {
+  max-width: 200px;
 }
 
 .fa-js {

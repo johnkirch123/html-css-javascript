@@ -8,8 +8,11 @@
   z-index: 1;
 
   &__logo {
-    padding: 0 3rem;
+    padding: 1rem 3rem;
     color: $color-white;
+    letter-spacing: 0.2rem;
+
+    animation: fadeIn 1.7s ease-in;
   }
 
   &__list {
@@ -25,8 +28,8 @@
     list-style: none;
     padding: 0 1.5rem;
 
-    animation: moveInBottom 1.3s ease-in-out;
-    animation-fill-mode: backwards;
+    // animation: moveInBottom 1.3s ease-in-out;
+    // animation-fill-mode: backwards;
   }
 
   &__link {

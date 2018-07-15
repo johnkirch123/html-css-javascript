@@ -1,0 +1,45 @@
+.nav {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: transparent;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  z-index: 1;
+
+  &__logo {
+    padding: 0 3rem;
+    color: $color-white;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(1rem, min-content));
+    grid-template-rows: 5rem;
+    justify-self: end;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__list-item {
+    list-style: none;
+    padding: 0 1.5rem;
+
+    animation: moveInBottom 1.3s ease-in-out;
+    animation-fill-mode: backwards;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary-dark;
+  }
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-heading {
+}

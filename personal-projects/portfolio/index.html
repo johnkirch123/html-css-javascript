@@ -12,7 +12,15 @@
 
 <body>
   <div class="container">
+    <!--NAVIGATION SECTION-->
     <nav class="nav">
+
+        <input type="checkbox" class="nav__checkbox" id="navi-toggle">
+  
+        <label for="navi-toggle" class="nav__button" id="nav__button">
+          <span class="nav__icon">&nbsp;</span>
+        </label>
+
       <div class="nav__logo">
         john kirch
       </div>
@@ -22,7 +30,7 @@
           <a href="#" class="nav__link">Home</a>
         </li>
         <li class="nav__list-item">
-          <a href="#" class="nav__link">Portfolio</a>
+          <a href="#portfolio" class="nav__link">Portfolio</a>
         </li>
         <li class="nav__list-item">
           <a href="#" class="nav__link">About</a>
@@ -44,7 +52,63 @@
         <h2 class="heading-two heading-two--3">Smoother</h2>
       </div>
     </header>
+
+    <!--PORTFOLIO SECTION-->
+    <div id="portfolio"></div>
+    <section class="portfolio">
+      <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/tolmar.png" alt="" class="project__img">
+        <h4 class="project__name">Tolmar Inventory App</h4>
+        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+
+      <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/natours.png" alt="" class="project__img">
+        <h4 class="project__name">Natours Tourism Website</h4>
+        <p class="project__text">Utilized advanced features of CSS and created this project for a course with traditional positioning and floats.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+
+        <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/trillo.png" alt="" class="project__img">
+        <h4 class="project__name">Trillo Travel Website</h4>
+        <p class="project__text">Utilized advanced CSS features to create this project for a course with flexbox.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+
+        <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/nexter.png" alt="" class="project__img">
+        <h4 class="project__name">Nexter Real Estate Website</h4>
+        <p class="project__text">Utilized advanced CSS features to create this project for a course with CSS Grids.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+
+        <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/mountains.jpg" alt="" class="project__img">
+        <h4 class="project__name">Tolmar Inventory App</h4>
+        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+
+      <!--Tolmar Project-->
+      <div class="project">
+        <img src="img/mountains.jpg" alt="" class="project__img">
+        <h4 class="project__name">Tolmar Inventory App</h4>
+        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
+        <button class="project__btn">See the project</button>
+      </div>
+    </section>
   </div>
 </body>
-
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 </html>

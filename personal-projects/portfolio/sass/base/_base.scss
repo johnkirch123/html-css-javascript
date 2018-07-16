@@ -6,8 +6,12 @@ $color-grey-dark-1: #333;
 $color-grey-medium-1: #37363d;
 $color-grey-light-1: #707070;
 $color-grey-light-2: #cecece;
+$color-grey-light-3: #eee;
 
 $color-white: #fff;
+$color-black: #000;
+
+$font-display: "Inknut Antiqua";
 
 *,
 *::before,
@@ -20,4 +24,15 @@ $color-white: #fff;
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+}
+
+
+::-moz-selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

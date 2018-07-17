@@ -11,15 +11,10 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" id="home">
     <!--NAVIGATION SECTION-->
     <nav class="nav">
-        <!--STILL NEED TO WORK ON INTEGRATING NAV BUTTON-->
-        <input type="checkbox" class="nav__checkbox" id="navi-toggle">
-  
-        <label for="navi-toggle" class="nav__button" id="nav__button">
-          <span class="nav__icon">&nbsp;</span>
-        </label>
+        
 
       <div class="nav__logo">
         john kirch
@@ -42,6 +37,26 @@
           <a href="#" class="nav__link">Contact</a>
         </li>
       </ul>
+
+      <input type="checkbox" class="nav__checkbox" id="navi-toggle">
+
+      <label id="nav__btn" for="navi-toggle" class="nav__button">
+        <span class="nav__icon">
+          &nbsp;
+        </span>
+      </label>
+
+      <div id="nav__bg" class="nav__background">&nbsp;</div>
+
+      <nav class="nav__nav">
+        <ul class="nav__list-2">
+          <li class="nav__item"><a href="#home" class="nav__link-2" onclick="uncheck()">Home</a></li>
+          <li class="nav__item"><a href="#portfolio" class="nav__link-2" onclick="uncheck()">Portfolio</a></li>
+          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">About</a></li>
+          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Blog</a></li>
+          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Contact</a></li>
+        </ul>
+      </nav>
     </nav>
     <!--HEADER SECTION-->
     <header class="header">
@@ -108,9 +123,10 @@
 </body>
 
 <!--TESTING SCRIPT FOR NAV BUTTON-->
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+<!-- <script>
+  function uncheck() {
+    document.querySelector("#navi-toggle").checked = false;
+  } 
+</script> -->
+<script type="text/javascript" src="js/main.js"></script>
 </html>

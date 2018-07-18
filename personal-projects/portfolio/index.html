@@ -21,38 +21,38 @@
       </div>
 
       <ul class="nav__list">
-        <li class="nav__list-item">
+        <li class="nav__list-item nav__nav-link">
           <a href="#" class="nav__link">Home</a>
         </li>
-        <li class="nav__list-item">
+        <li class="nav__list-item nav__nav-link">
+          <a href="#about" class="nav__link">About</a>
+        </li>
+        <li class="nav__list-item nav__nav-link">
           <a href="#portfolio" class="nav__link">Portfolio</a>
         </li>
-        <li class="nav__list-item">
-          <a href="#" class="nav__link">About</a>
-        </li>
-        <li class="nav__list-item">
+        <li class="nav__list-item nav__nav-link">
           <a href="#" class="nav__link">Blog</a>
         </li>
-        <li class="nav__list-item">
+        <li class="nav__list-item nav__nav-link">
           <a href="#" class="nav__link">Contact</a>
         </li>
       </ul>
 
       <input type="checkbox" class="nav__checkbox" id="navi-toggle">
 
-      <label id="nav__btn" for="navi-toggle" class="nav__button">
+      <label id="nav__btn" for="navi-toggle" class="nav__button hidden">
         <span class="nav__icon">
           &nbsp;
         </span>
       </label>
 
-      <div id="nav__bg" class="nav__background">&nbsp;</div>
+      <div id="nav__bg" class="nav__background hidden">&nbsp;</div>
 
       <nav class="nav__nav">
         <ul class="nav__list-2">
           <li class="nav__item"><a href="#home" class="nav__link-2" onclick="uncheck()">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link-2" onclick="uncheck()">About</a></li>
           <li class="nav__item"><a href="#portfolio" class="nav__link-2" onclick="uncheck()">Portfolio</a></li>
-          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">About</a></li>
           <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Blog</a></li>
           <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Contact</a></li>
         </ul>
@@ -68,9 +68,36 @@
       </div>
     </header>
 
+    <!--ABOUT SECTION-->
+    <section class="about" id="about">
+      <div class="about__heading">
+        <img src="img/johnnyK.jpg" alt="Image of self">
+        <h3 class="heading-three about__name">John Kirch</h3>
+      </div>
+      <div class="about__info">
+        <p class="about__info--lead">What can I say, I am super passionate about web design and development. I got my start in programming when a need arose to manage our inventory at a pharmaceutical company that I worked at. I thus embarked on a journey to learn how to design, build, and deploy this program using java and I was hooked! I often spend as much available time as possible to learn about the industry and new technologies as well as spending a lot of time developing projects for both friends and myself.</p>
+        <br>
+        <p class="about__info--lead">Currently I am getting my skills to a point that I will completely comfortable with all aspects of full stack development and have decided to focus mostly on the MERN stack (MongoDB, Express, React, and Nodejs). I am currently solidifying my skills on the front end before moving to the back end, although I have had experience with API's, SQL, AWS, and a few other back end technologies.</p>
+      </div>
+      <hr>
+      <div class="about__skills">
+        <div class="about__skill about__skill--1">skill</div>
+        <div class="about__skill about__skill--2">skill</div>
+        <div class="about__skill about__skill--3">skill</div>
+        <div class="about__skill about__skill--4">skill</div>
+        <div class="about__skill about__skill--5">skill</div>
+        <div class="about__skill about__skill--6">skill</div>
+        <div class="about__skill about__skill--7">skill</div>
+        <div class="about__skill about__skill--8">skill</div>
+        <div class="about__skill about__skill--9">skill</div>
+        <div class="about__skill about__skill--10">skill</div>
+        <div class="about__skill about__skill--11">skill</div>
+        <div class="about__skill about__skill--12">skill</div>
+      </div>
+    </section>
+
     <!--PORTFOLIO SECTION-->
-    <div id="portfolio"></div>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <!--Tolmar Project-->
       <div class="project">
         <img src="img/tolmar.png" alt="" class="project__img">

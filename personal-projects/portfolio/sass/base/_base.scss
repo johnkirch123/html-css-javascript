@@ -1,3 +1,7 @@
+:root {
+  --duration: 1;
+}
+
 $color-primary: #886a4a;
 $color-primary-light: #e3874f;
 $color-primary-dark: #584735;
@@ -27,7 +31,6 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
 
 ::-moz-selection {
   background-color: $color-primary;

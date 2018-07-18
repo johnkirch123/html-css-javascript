@@ -15,7 +15,7 @@
     grid-row: 1 / 2;
     grid-column: 1 / 2;
 
-    animation: fadeIn 1.6s ease-in-out;
+    animation: fadeIn calc(var(--duration) * 1.6s) ease-in-out;
   }
 
   &__list {
@@ -33,7 +33,7 @@
     list-style: none;
     height: 100%;
 
-    animation: moveInBottom 1.3s ease-in-out;
+    animation: moveInTop 1s ease-in-out;
     animation-fill-mode: backwards;
   }
 
@@ -214,6 +214,23 @@
 
 .hidden {
   opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn .5s ease-in;
+}
+
+.fade-in-delay {
+  animation: fadeIn .5s ease-in .5s;
+  animation-fill-mode: backwards;
+}
+
+.fade-out {
+  animation: fadeOut .5s ease-out;
+}
+
+.fade-out-instant {
+  animation: fadeOut 0s ease-out;
 }
 
 .header {

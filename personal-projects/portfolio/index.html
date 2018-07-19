@@ -14,7 +14,7 @@
   <div class="container" id="home">
     <!--NAVIGATION SECTION-->
     <nav class="nav">
-        
+
 
       <div class="nav__logo">
         john kirch
@@ -50,11 +50,21 @@
 
       <nav class="nav__nav">
         <ul class="nav__list-2">
-          <li class="nav__item"><a href="#home" class="nav__link-2" onclick="uncheck()">Home</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link-2" onclick="uncheck()">About</a></li>
-          <li class="nav__item"><a href="#portfolio" class="nav__link-2" onclick="uncheck()">Portfolio</a></li>
-          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Blog</a></li>
-          <li class="nav__item"><a href="" class="nav__link-2" onclick="uncheck()">Contact</a></li>
+          <li class="nav__item">
+            <a href="#home" class="nav__link-2" onclick="uncheck()">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link-2" onclick="uncheck()">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link-2" onclick="uncheck()">Portfolio</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link-2" onclick="uncheck()">Blog</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link-2" onclick="uncheck()">Contact</a>
+          </li>
         </ul>
       </nav>
     </nav>
@@ -68,92 +78,106 @@
       </div>
     </header>
 
-    <!--ABOUT SECTION-->
-    <section class="about" id="about">
-      <div class="about__heading">
-        <img src="img/johnnyK.jpg" alt="Image of self">
-        <h3 class="heading-three about__name">John Kirch</h3>
-      </div>
-      <div class="about__info">
-        <p class="about__info--lead">What can I say, I am super passionate about web design and development. I got my start in programming when a need arose to manage our inventory at a pharmaceutical company that I worked at. I thus embarked on a journey to learn how to design, build, and deploy this program using java and I was hooked! I often spend as much available time as possible to learn about the industry and new technologies as well as spending a lot of time developing projects for both friends and myself.</p>
-        <br>
-        <p class="about__info--lead">Currently I am getting my skills to a point that I will completely comfortable with all aspects of full stack development and have decided to focus mostly on the MERN stack (MongoDB, Express, React, and Nodejs). I am currently solidifying my skills on the front end before moving to the back end, although I have had experience with API's, SQL, AWS, and a few other back end technologies.</p>
-      </div>
-      <hr>
-      <div class="about__skills">
-        <div class="about__skill about__skill--1">skill</div>
-        <div class="about__skill about__skill--2">skill</div>
-        <div class="about__skill about__skill--3">skill</div>
-        <div class="about__skill about__skill--4">skill</div>
-        <div class="about__skill about__skill--5">skill</div>
-        <div class="about__skill about__skill--6">skill</div>
-        <div class="about__skill about__skill--7">skill</div>
-        <div class="about__skill about__skill--8">skill</div>
-        <div class="about__skill about__skill--9">skill</div>
-        <div class="about__skill about__skill--10">skill</div>
-        <div class="about__skill about__skill--11">skill</div>
-        <div class="about__skill about__skill--12">skill</div>
-      </div>
-    </section>
+    <div class="body-container">
+      <!--ABOUT SECTION-->
+      <section class="about" id="about">
+        <div class="about__heading">
+          <img src="img/johnnyK.jpg" alt="Image of self">
+          <h3 class="heading-three about__name">John Kirch</h3>
+        </div>
+        <div class="about__info">
+          <p class="about__info--lead">What can I say, I am super passionate about web design and development. I got my start in programming when a need
+            arose to manage our inventory at a pharmaceutical company that I worked at. I thus embarked on a journey to learn
+            how to design, build, and deploy this program using java and I was hooked! I often spend as much available time
+            as possible to learn about the industry and new technologies as well as spending a lot of time developing projects
+            for both friends and myself.</p>
+          <br>
+          <p class="about__info--lead">Currently I am getting my skills to a point that I will completely comfortable with all aspects of full stack development
+            and have decided to focus mostly on the MERN stack (MongoDB, Express, React, and Nodejs). I am currently solidifying
+            my skills on the front end before moving to the back end, although I have had experience with API's, SQL, AWS,
+            and a few other back end technologies.</p>
+        </div>
+        <hr>
+      </section>
 
-    <!--PORTFOLIO SECTION-->
-    <section class="portfolio" id="portfolio">
-      <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/tolmar.png" alt="" class="project__img">
-        <h4 class="project__name">Tolmar Inventory App</h4>
-        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
-        <button class="project__btn">See the project</button>
-      </div>
+      <!--SKILLS SECTION-->
+      <section class="portfolio" id="portfolio">
 
-      <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/natours.png" alt="" class="project__img">
-        <h4 class="project__name">Natours Tourism Website</h4>
-        <p class="project__text">Utilized advanced features of CSS and created this project for a course with traditional positioning and floats.</p>
-        <button class="project__btn">See the project</button>
-      </div>
+        <div class="project">
+          <img src="img/html.svg" alt="" class="project__img">
+          <h4 class="project__name">HTML5</h4>
+          <p class="project__text">info about HTML5.</p>
+          <button class="project__btn">Learn More</button>
+        </div>
 
-        <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/trillo.png" alt="" class="project__img">
-        <h4 class="project__name">Trillo Travel Website</h4>
-        <p class="project__text">Utilized advanced CSS features to create this project for a course with flexbox.</p>
-        <button class="project__btn">See the project</button>
-      </div>
 
-        <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/nexter.png" alt="" class="project__img">
-        <h4 class="project__name">Nexter Real Estate Website</h4>
-        <p class="project__text">Utilized advanced CSS features to create this project for a course with CSS Grids.</p>
-        <button class="project__btn">See the project</button>
-      </div>
+        <div class="project">
+          <img src="img/css.svg" alt="" class="project__img">
+          <h4 class="project__name">CSS3</h4>
+          <p class="project__text">More info about CSS3.</p>
+          <button class="project__btn">Learn More</button>
+        </div>
 
-        <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/mountains.jpg" alt="" class="project__img">
-        <h4 class="project__name">Tolmar Inventory App</h4>
-        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
-        <button class="project__btn">See the project</button>
-      </div>
 
-      <!--Tolmar Project-->
-      <div class="project">
-        <img src="img/mountains.jpg" alt="" class="project__img">
-        <h4 class="project__name">Tolmar Inventory App</h4>
-        <p class="project__text">Inventory management system for a manufacturing production environment, written in java utilizing web api's. Designed, developed, and deployed myself.</p>
-        <button class="project__btn">See the project</button>
+        <div class="project">
+          <img src="img/sass.svg" alt="" class="project__img">
+          <h4 class="project__name">SASS</h4>
+          <p class="project__text">BEM and 7:1, more info about Sass</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/bootstrap.svg" alt="" class="project__img">
+          <h4 class="project__name">Bootstrap</h4>
+          <p class="project__text">More info about boostrap</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/js.svg" alt="" class="project__img">
+          <h4 class="project__name">Javascript</h4>
+          <p class="project__text">ES6, more info about javascript.</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/jquery.svg" alt="" class="project__img">
+          <h4 class="project__name">JQuery</h4>
+          <p class="project__text">More info about jquery</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/node.svg" alt="" class="project__img">
+          <h4 class="project__name">NodeJS</h4>
+          <p class="project__text">More info about nodejs</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/python.svg" alt="" class="project__img">
+          <h4 class="project__name">Python</h4>
+          <p class="project__text">More info about pyhton</p>
+          <button class="project__btn">Learn More</button>
+        </div>
+
+
+        <div class="project">
+          <img src="img/csharp.svg" alt="" class="project__img">
+          <h4 class="project__name">C#</h4>
+          <p class="project__text">More info about C#</p>
+          <button class="project__btn">Learn More</button>
+      </section>
       </div>
-    </section>
-  </div>
+    </div>
+
 </body>
 
-<!--TESTING SCRIPT FOR NAV BUTTON-->
-<!-- <script>
-  function uncheck() {
-    document.querySelector("#navi-toggle").checked = false;
-  } 
-</script> -->
 <script type="text/javascript" src="js/main.js"></script>
+
 </html>

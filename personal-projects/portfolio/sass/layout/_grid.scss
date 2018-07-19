@@ -1,8 +1,11 @@
 .container {
   background-color: $color-grey-light-3;
   display: grid;
-  grid-template-columns: repeat(8, [col-start] minmax(min-content, 100%) [col-end]);
-  grid-template-rows: [nav-start] 5rem [nav-end header-start] calc(100vh - 5rem) [header-end about-start] 800px [about-end portfolio-start] min-content [portfolio-end];
+  grid-template-columns: repeat(
+    8,
+    [col-start] minmax(min-content, 100%) [col-end]
+  );
+  grid-template-rows: [nav-start] 5rem [nav-end header-start] calc(100vh - 5rem) [header-end about-start] min-content [about-end portfolio-start] min-content [portfolio-end];
 
   justify-content: center;
 }

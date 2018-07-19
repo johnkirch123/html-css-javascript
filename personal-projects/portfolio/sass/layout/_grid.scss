@@ -1,11 +1,17 @@
 .container {
-  background-color: $color-grey-light-3;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-dark,
+    $color-primary-dark-2
+  );
+
+  box-shadow: inset 3px 3px 10rem 3rem rgba(0, 0, 0, 0.5);
+
   display: grid;
   grid-template-columns: repeat(
     8,
     [col-start] minmax(min-content, 100%) [col-end]
   );
   grid-template-rows: [nav-start] 5rem [nav-end header-start] calc(100vh - 5rem) [header-end about-start] min-content [about-end portfolio-start] min-content [portfolio-end];
-
   justify-content: center;
 }

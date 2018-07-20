@@ -2,12 +2,21 @@
   grid-column: 1 / -1;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 15%));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 30%));
   grid-template-rows: repeat(auto-fit, min-max(15rem, min-content));
   grid-gap: 3rem;
   justify-content: center;
   align-items: center;
-  margin: 30rem 20rem;
+  margin: 10rem auto;
+  position: relative;
+
+  &__heading {
+    position: absolute;
+    color: black;
+    top: -8rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .project {

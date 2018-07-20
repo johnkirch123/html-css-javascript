@@ -1,11 +1,11 @@
 .container {
-  background-image: linear-gradient(
-    to right bottom,
-    $color-primary-dark-2,
-    $color-primary-dark-3
-  );
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   $color-primary-dark-2,
+  //   $color-primary-dark-3
+  // );
 
-  box-shadow: inset 3px 3px 10rem 5rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 3px 3px 10rem rgba(0, 0, 0, 0.3);
 
   display: grid;
   grid-template-columns: repeat(

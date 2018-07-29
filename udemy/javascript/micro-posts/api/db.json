@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": 1,
       "title": "Post One",
-      "body": "this is post one"
+      "body": "this is post one for sure",
+      "id": 1
     },
     {
       "id": 2,
@@ -14,6 +14,16 @@
       "id": 3,
       "title": "Post Three",
       "body": "this is post three"
+    },
+    {
+      "title": "harry potter - Sorcer's Stone",
+      "body": "herr perr",
+      "id": 4
+    },
+    {
+      "title": "harry potter",
+      "body": "The best",
+      "id": 5
     }
   ]
 }

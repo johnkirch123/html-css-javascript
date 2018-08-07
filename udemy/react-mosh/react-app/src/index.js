@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+const person = {
+  name: 'John',
+  walk() {
+    console.log(this);
+  },
+  talk() {}
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const walk = person.walk.bind(person);
+walk();

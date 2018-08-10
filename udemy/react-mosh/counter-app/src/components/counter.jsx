@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
     value: this.props.value,
-    tags: ['tag1', 'tag2', 'tag3']
+    tags: ["tag1", "tag2", "tag3"]
   };
 
   handleIncrement = product => {
     this.setState({ value: this.state.value + 1 });
-  }
+  };
 
   // renderTags() {
   //   if (this.state.tags.length === 0) return <p>There are no tags!</p>;
@@ -21,11 +20,16 @@ class Counter extends Component {
   //   );
   // }
 
-  render() { 
-    return ( 
+  render() {
+    return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
         {/* { this.state.tags.length === 0 && 'Please create a new tag!'}
         { this.renderTags() } */}
       </div>
@@ -41,8 +45,8 @@ class Counter extends Component {
 
   formatCount() {
     const { value } = this.state;
-    return value === 0 ? 'Zero' : value;
+    return value === 0 ? "Zero" : value;
   }
 }
- 
-export default Counter ;
+
+export default Counter;

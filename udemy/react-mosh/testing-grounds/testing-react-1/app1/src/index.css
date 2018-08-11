@@ -5,7 +5,8 @@ body {
 }
 
 .container .numberAmount {
-  font-size: 45px;
   display: block;
   text-align: center;
+  margin: 100px 0;
+  font-size: 70px;
 }

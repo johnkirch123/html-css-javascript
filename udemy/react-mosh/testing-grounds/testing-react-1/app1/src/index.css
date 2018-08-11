@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.container .numberAmount {
+  font-size: 45px;
+  display: block;
+  text-align: center;
+}

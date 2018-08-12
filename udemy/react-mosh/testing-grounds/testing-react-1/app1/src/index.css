@@ -4,9 +4,12 @@ body {
   font-family: sans-serif;
 }
 
+.container {
+  padding: 20px;
+}
+
 .container .numberAmount {
   display: block;
   text-align: center;
-  margin: 100px 0;
   font-size: 70px;
 }

@@ -5,22 +5,42 @@ class Counter extends Component {
   //   value: this.props.counter.value
   //   // tags: ["tag1", "tag2", "tag3"]
   // }
+  /////////////// make an ajax call if something updates, otherwise don't , efficiency //
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log('PrevProps', prevProps);
+  //   console.log('PrevState', prevState);
+  //   if (prevProps.counter.value !== this.props.counter.value) {
+  //     // Ajax call and get new data from the server
+  //   }
+  // }
+
+  componentWillUnmount() {
+    console.log('Counter - Unmount');
+  }
 
   render() {
+    console.log('Counter - Rendered');
     return (
-      <div className="container bg-light mt-5">
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-outline-primary btn-lg btn-block py-2 mt-4">
-          Increment
-        </button>
-        <button 
-          onClick={() => this.props.onDecrement(this.props.counter)} 
-          className="btn btn-outline-warning btn-lg btn-block py-2 mt-4">
-          Decrement
-        </button>
-        <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-outline-danger btn-lg btn-block py-2 mt-4">
-          Delete
-        </button>
+      <div className="bg-light mt-5">
+        <div className="row">
+          <div className="col-5">
+            <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+          </div>
+          <div className="col">
+            <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-outline-primary btn-lg m-2">
+              +
+            </button>
+            <button 
+              onClick={() => this.props.onDecrement(this.props.counter)} 
+              disabled={this.props.counter.value <= 0}
+              className="btn btn-outline-warning btn-lg m-2">
+              -
+            </button>
+            <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-outline-danger btn-lg m-2">
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
@@ -35,7 +55,7 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "numberAmount badge mb-4 badge-";
-    return (classes += this.props.counter.value < 0 ? "warning" : "success");
+    return (classes += this.props.counter.value <= 0 ? "warning" : "success");
   }
 
   formatCount() {

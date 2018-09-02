@@ -7,7 +7,7 @@ mongoose = require("mongoose");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-const API_KEY = "RGAPI-488693fa-4495-4dcc-ba1d-d1b3f8017f35";
+const API_KEY = "";
 const ACCOUNT_ID = "223438398";
 const ROOT_URL = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/dubskiski?api_key=${API_KEY}`;
 const MATCH_URL = `https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/${ACCOUNT_ID}?api_key=${API_KEY}`;

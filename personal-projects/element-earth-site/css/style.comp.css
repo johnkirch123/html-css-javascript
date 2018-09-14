@@ -26,5 +26,8 @@ body {
       padding: 0; } }
 
 ::selection {
-  background-color: #55c57a;
+  background-color: #409a29;
   color: #fff; }
+
+h1 {
+  color: #409a29; }

@@ -9,4 +9,5 @@ router.get("/test", (req, res) => {
   res.json({ msg: "Blogs Works" });
 });
 
+// *** 2. Always export routes ***
 module.exports = router;

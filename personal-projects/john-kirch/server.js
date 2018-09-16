@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 // 2. Creating routes via js files from routes/api
 const users = require("./routes/api/users");
 const blogs = require("./routes/api/blogs");
+const projects = require("./routes/api/projects");
 
 // 0. Instantiate express in the app variable.
 const app = express();
@@ -23,6 +24,7 @@ app.get("/", (req, res) => res.send("You have reached the homepage"));
 // 2. Use Routes
 app.use("/api/users", users);
 app.use("/api/blogs", blogs);
+app.use("/api/projects", projects);
 
 // 0. const variable for the port.
 const port = process.env.PORT || 4080;

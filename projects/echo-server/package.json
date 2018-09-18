@@ -1,0 +1,14 @@
+{
+  "name": "echo-server",
+  "version": "1.0.0",
+  "description": "Simple Echo Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "John Kirch",
+  "license": "ISC",
+  "dependencies": {
+    "http": "0.0.0"
+  }
+}

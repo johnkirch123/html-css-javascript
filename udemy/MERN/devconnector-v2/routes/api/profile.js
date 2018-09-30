@@ -219,7 +219,7 @@ router.post(
         school: req.body.school,
         degree: req.body.degree,
         location: req.body.location,
-        fieldofstudy: req.body.fieldofstudy,
+        fieldOfStudy: req.body.fieldOfStudy,
         from: req.body.from,
         to: req.body.to,
         current: req.body.current,

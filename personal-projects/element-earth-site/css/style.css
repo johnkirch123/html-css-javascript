@@ -6,7 +6,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  font-family: Catamaran; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -19,7 +20,6 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: goldenrod;
   padding: 3rem; }
   @media only screen and (max-width: 56.25em) {
     body {

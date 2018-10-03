@@ -9,6 +9,7 @@
 html {
   // defines what 1rem is
   font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+  font-family: Catamaran;
 
   @include respond(tab-land) {
     // width < 1200 ?
@@ -27,7 +28,6 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: goldenrod;
   padding: 3rem;
 
   @include respond(tab-port) {

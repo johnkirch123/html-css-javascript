@@ -1,3 +1,17 @@
-h1 {
-  color: $color-primary-0;
+.container {
+  display: grid;
+  grid-template-rows: 8rem calc(100vh - 5vh) repeat(4, min-content) 10rem;
+  grid-template-columns:
+    [full-start] 1fr repeat(8, [col-start] minmax(min-content, 22rem) [col-end])
+    1fr [full-end];
+}
+
+.nav {
+  background-color: $color-primary;
+  grid-column: full-start / full-end;
+
+  &__links {
+    grid-column: col-end 6 / -1;
+    grid-row: 0 / 1;
+  }
 }

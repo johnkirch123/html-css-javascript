@@ -7,7 +7,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: Catamaran; }
+  font-family: Catamaran, Arial; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -19,15 +19,23 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box;
-  padding: 3rem; }
+  box-sizing: border-box; }
   @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
 
 ::selection {
-  background-color: #2d882d;
+  background-color: #032222;
   color: #fff; }
 
-h1 {
-  color: #2d882d; }
+.container {
+  display: grid;
+  grid-template-rows: 8rem calc(100vh - 5vh) repeat(4, min-content) 10rem;
+  grid-template-columns: [full-start] 1fr repeat(8, [col-start] minmax(min-content, 22rem) [col-end]) 1fr [full-end]; }
+
+.nav {
+  background-color: #032222;
+  grid-column: full-start / full-end; }
+  .nav__links {
+    grid-column: col-end 6 / -1;
+    grid-row: 0 / 1; }

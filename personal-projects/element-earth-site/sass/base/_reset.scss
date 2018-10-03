@@ -9,7 +9,7 @@
 html {
   // defines what 1rem is
   font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
-  font-family: Catamaran;
+  font-family: $default-font-family;
 
   @include respond(tab-land) {
     // width < 1200 ?
@@ -28,7 +28,6 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem;
 
   @include respond(tab-port) {
     padding: 0;
@@ -36,6 +35,6 @@ body {
 }
 
 ::selection {
-  background-color: $color-primary-0;
+  background-color: $color-primary;
   color: $color-white;
 }

@@ -7,11 +7,20 @@
 }
 
 .nav {
-  background-color: $color-primary;
+  background-color: transparent;
   grid-column: full-start / full-end;
 
   &__links {
     grid-column: col-end 6 / -1;
     grid-row: 0 / 1;
   }
+}
+
+.header {
+  grid-column: full-start / full-end;
+  background-image: url("../../img/hero.jpg");
+  background-size: cover;
+  width: 100%;
+  margin-top: -8rem;
+  z-index: -1;
 }

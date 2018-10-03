@@ -34,8 +34,16 @@ body {
   grid-template-columns: [full-start] 1fr repeat(8, [col-start] minmax(min-content, 22rem) [col-end]) 1fr [full-end]; }
 
 .nav {
-  background-color: #032222;
+  background-color: transparent;
   grid-column: full-start / full-end; }
   .nav__links {
     grid-column: col-end 6 / -1;
     grid-row: 0 / 1; }
+
+.header {
+  grid-column: full-start / full-end;
+  background-image: url("../../img/hero.jpg");
+  background-size: cover;
+  width: 100%;
+  margin-top: -8rem;
+  z-index: -1; }

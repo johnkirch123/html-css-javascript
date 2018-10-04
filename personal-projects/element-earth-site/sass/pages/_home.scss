@@ -39,7 +39,7 @@
     &--link {
       text-decoration: none;
       color: $color-white;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: bold;
     }
   }
@@ -85,8 +85,9 @@
   }
 
   &__products {
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 30rem);
     padding: 10rem;
     grid-gap: 10rem;
     // give some temp height
@@ -95,7 +96,7 @@
 
   &__product {
     color: $color-white;
-    align-items: center;
+    text-align: center;
     font-size: 3rem;
   }
 }

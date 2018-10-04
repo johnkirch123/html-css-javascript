@@ -60,7 +60,7 @@ body {
     .nav__list--link {
       text-decoration: none;
       color: #fff;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: bold; }
 
 .header {
@@ -95,12 +95,13 @@ body {
     text-align: center;
     margin-top: 2rem; }
   .featured__products {
+    justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 30rem);
     padding: 10rem;
     grid-gap: 10rem;
     height: 500px; }
   .featured__product {
     color: #fff;
-    align-items: center;
+    text-align: center;
     font-size: 3rem; }

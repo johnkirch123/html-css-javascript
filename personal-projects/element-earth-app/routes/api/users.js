@@ -5,6 +5,9 @@ const router = express.Router();
 const User = require("../../models/User");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+// 7. require JWT and keys for the secret
+const jwt = require("jsonwebtoken");
+const keys = require("../../config/keys");
 
 // 3. create a test route returning json for react to use
 // @route   GET api/users/test
@@ -13,7 +16,7 @@ const bcrypt = require("bcryptjs");
 router.get("/test", (req, res) => res.json({ msg: "Users Works" }));
 
 // 5. create a registration route returning json for react to use
-// @route   GET api/users/register
+// @route   POST api/users/register
 // @desc    Register user
 // @access  Public
 router.post("/register", (req, res) => {
@@ -51,6 +54,53 @@ router.post("/register", (req, res) => {
               .then(user => res.json(user))
               .catch(err => console.log(err));
           });
+        });
+      }
+    })
+    .catch(err => console.log(err));
+});
+
+// 6. create a login route and validate username and password and return JWT
+// @route   POST api/users/login
+// @desc    Login user
+// @access  Public
+router.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  //Find user by email with user model
+  User.findOne({ email })
+    .then(user => {
+      // If user does not exist return 404 and set error
+      if (!user) {
+        return res.status(404).json({ email: "User not found" });
+      } else {
+        // Check password using bcrypt to check the entered password to the
+        // hashed password
+        bcrypt.compare(password, user.password).then(isMatch => {
+          // If user passes return JWT
+          if (isMatch) {
+            // 7. Creating the JWT payload
+            const payload = {
+              id: user.id,
+              name: user.name,
+              avatar: user.avatar
+            };
+            // 7. Sign the Token and return the Bearer token via JSON
+            jwt.sign(
+              payload,
+              keys.secret,
+              { expiresIn: 3600 },
+              (err, token) => {
+                res.json({
+                  success: true,
+                  token: `Bearer ${token}`
+                });
+              }
+            );
+          } else {
+            // return 'Bad Request Error' 400 code and a password object for error handling
+            return res.status(400).json({ password: "Incorrect password" });
+          }
         });
       }
     })

@@ -40,10 +40,10 @@ body {
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr); }
   .nav__logo {
-    background-image: url("../../img/Ellipse 1.png");
-    background-repeat: no-repeat;
-    margin-left: 2rem;
-    margin-top: 2rem; }
+    height: 11rem;
+    width: 11rem;
+    margin-left: 4rem;
+    margin-top: -1rem; }
   .nav__list {
     float: right;
     display: grid;

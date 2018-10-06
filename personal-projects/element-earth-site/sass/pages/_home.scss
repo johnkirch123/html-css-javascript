@@ -63,6 +63,11 @@
   &__info {
     grid-column: col-start 2 / col-start 8;
 
+    &--statement {
+      text-align: center;
+      padding: 4rem;
+    }
+
     &--name {
       float: right;
       margin-top: -2.5rem;

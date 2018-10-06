@@ -79,6 +79,9 @@ body {
   font-size: 2rem; }
   .about__info {
     grid-column: col-start 2 / col-start 8; }
+    .about__info--statement {
+      text-align: center;
+      padding: 4rem; }
     .about__info--name {
       float: right;
       margin-top: -2.5rem;

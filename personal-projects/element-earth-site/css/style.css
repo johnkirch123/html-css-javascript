@@ -165,3 +165,6 @@ body {
       width: 8rem;
       border-radius: 50%;
       margin-right: 3rem; }
+      .footer__social > a > img:hover {
+        height: 8.3rem;
+        width: 8.3rem; }

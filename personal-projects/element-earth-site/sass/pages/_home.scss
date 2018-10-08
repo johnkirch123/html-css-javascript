@@ -168,6 +168,10 @@
       width: 8rem;
       border-radius: 50%;
       margin-right: 3rem;
+      &:hover {
+        height: 8.3rem;
+        width: 8.3rem;
+      }
     }
   }
 }

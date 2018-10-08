@@ -30,8 +30,8 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 8rem calc(100vh - 5vh) repeat(4, min-content) 10rem;
-  grid-template-columns: [full-start] 1fr repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) 1fr [full-end]; }
+  grid-template-rows: 8rem calc(100vh - 5vh) min-content minmax(25vw, 35vw) minmax(min-content, 35rem) 500px 15rem;
+  grid-template-columns: [full-start] min-content repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) min-content [full-end]; }
 
 .nav {
   display: grid;
@@ -67,6 +67,7 @@ body {
   grid-column: full-start / full-end;
   background-image: url("../../img/hero.jpg");
   background-size: cover;
+  background-position: center;
   width: 100%;
   margin-top: -17rem;
   z-index: -1; }
@@ -91,20 +92,54 @@ body {
 
 .featured {
   background-color: #032222;
-  grid-column: full-start / full-end; }
+  grid-column: full-start / col-end 8;
+  grid-row: 4 / 5;
+  overflow: hidden; }
+  .featured__box {
+    background-color: #032222;
+    grid-column: col-end 8 / -1; }
   .featured__title {
     color: #fff;
-    font-size: 2.9rem;
+    font-size: 4rem;
     text-align: center;
-    margin-top: 2rem; }
-  .featured__products {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(3, 30rem);
-    padding: 10rem;
-    grid-gap: 10rem;
-    height: 500px; }
-  .featured__product {
+    margin-top: 5rem;
+    writing-mode: vertical-rl; }
+  .featured__products--1 > img {
+    width: 100%; }
+  .featured__products--2 > img {
+    width: 100%; }
+  .featured__products--3 > img {
+    width: 100%; }
+  .featured__products--text {
+    position: absolute;
     color: #fff;
     text-align: center;
-    font-size: 3rem; }
+    font-size: 2rem;
+    margin-top: 30%; }
+
+.reviews {
+  background-color: #032222;
+  grid-column: col-start 1 / -1;
+  grid-row: 5 / 6;
+  background-color: #aeaeae; }
+  .reviews__box {
+    background-color: #032222;
+    grid-column: full-start / col-start 1; }
+  .reviews__title {
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 5rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-top: 15rem; }
+
+.images {
+  background-color: goldenrod;
+  grid-column: 1 / -1;
+  grid-row: 6 / 7; }
+
+.footer {
+  background-color: #032222;
+  grid-row: 7 / -1;
+  grid-column: 1 / -1; }

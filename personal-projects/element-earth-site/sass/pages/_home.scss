@@ -9,7 +9,7 @@
   grid-template-columns:
     [full-start] min-content repeat(
       8,
-      [col-start] minmax(min-content, 18rem) [col-end]
+      [col-start] minmax(min-content, 1fr) [col-end]
     )
     min-content [full-end];
 }
@@ -144,4 +144,16 @@
   background-color: $color-primary;
   grid-row: 7 / -1;
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  &__social {
+    margin-right: 5rem;
+    align-self: center;
+    & > a > img {
+      height: 8rem;
+      width: 8rem;
+      border-radius: 50%;
+      margin-right: 3rem;
+    }
+  }
 }

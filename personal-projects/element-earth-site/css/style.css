@@ -31,7 +31,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 8rem calc(100vh - 5vh) min-content minmax(25vw, 35vw) minmax(min-content, 35rem) 500px 15rem;
-  grid-template-columns: [full-start] min-content repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) min-content [full-end]; }
+  grid-template-columns: [full-start] min-content repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) min-content [full-end]; }
 
 .nav {
   display: grid;
@@ -142,4 +142,14 @@ body {
 .footer {
   background-color: #032222;
   grid-row: 7 / -1;
-  grid-column: 1 / -1; }
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between; }
+  .footer__social {
+    margin-right: 5rem;
+    align-self: center; }
+    .footer__social > a > img {
+      height: 8rem;
+      width: 8rem;
+      border-radius: 50%;
+      margin-right: 3rem; }

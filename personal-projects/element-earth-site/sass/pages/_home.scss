@@ -70,6 +70,17 @@
       text-align: center;
       padding: 4rem;
     }
+    &--bold {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222;
+    }
+    &--strong {
+      text-transform: uppercase;
+      font-size: 1.4em;
+      color: #ff3401;
+      font-weight: 800;
+    }
     &--name {
       float: right;
       margin-top: -2.5rem;
@@ -98,7 +109,6 @@
   &__products--1 {
     & > img {
       width: 100%;
-      background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
     }
   }
   &__products--2 {

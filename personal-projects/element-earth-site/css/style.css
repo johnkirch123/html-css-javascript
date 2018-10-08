@@ -85,6 +85,15 @@ body {
     .about__info--statement {
       text-align: center;
       padding: 4rem; }
+    .about__info--bold {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222; }
+    .about__info--strong {
+      text-transform: uppercase;
+      font-size: 1.4em;
+      color: #ff3401;
+      font-weight: 800; }
     .about__info--name {
       float: right;
       margin-top: -2.5rem;
@@ -107,8 +116,7 @@ body {
     margin-top: 5rem;
     writing-mode: vertical-rl; }
   .featured__products--1 > img {
-    width: 100%;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); }
+    width: 100%; }
   .featured__products--2 > img {
     width: 100%; }
   .featured__products--3 > img {

@@ -7,11 +7,8 @@
     )
     500px 15rem;
   grid-template-columns:
-    [full-start] min-content repeat(
-      8,
-      [col-start] minmax(min-content, 1fr) [col-end]
-    )
-    min-content [full-end];
+    [full-start] 6rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end])
+    6rem [full-end];
 }
 .nav {
   display: grid;

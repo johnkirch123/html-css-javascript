@@ -31,7 +31,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 8rem calc(100vh - 5vh) min-content minmax(25vw, 35vw) minmax(min-content, 35rem) 500px 15rem;
-  grid-template-columns: [full-start] min-content repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) min-content [full-end]; }
+  grid-template-columns: [full-start] 6rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) 6rem [full-end]; }
 
 .nav {
   display: grid;

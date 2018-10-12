@@ -7,11 +7,8 @@
     )
     min-content 15rem;
   grid-template-columns:
-    [full-start] min-content repeat(
-      8,
-      [col-start] minmax(min-content, 1fr) [col-end]
-    )
-    min-content [full-end];
+    [full-start] 7rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end])
+    7rem [full-end];
 }
 .nav {
   display: grid;
@@ -92,12 +89,15 @@
 }
 .featured {
   background-color: $color-primary;
-  grid-column: full-start / col-end 8;
+  grid-column: full-start / full-end;
   grid-row: 4 / 5;
   overflow: hidden;
+  position: relative;
   &__box {
     background-color: $color-primary;
+    grid-row: 4 / 5;
     grid-column: col-end 8 / -1;
+    z-index: 1;
   }
   &__title {
     color: $color-white;
@@ -106,34 +106,38 @@
     margin-top: 5rem;
     writing-mode: vertical-rl;
   }
-  &__products--1 {
-    & > img {
-      width: 100%;
+  &__products {
+    grid-column: full-start / col-end 9;
+    &--1 {
+      grid-column: full-start / col-end 8;
+      & > img {
+        width: 100%;
+      }
     }
-  }
-  &__products--2 {
-    & > img {
-      width: 100%;
+    &--2 {
+      & > img {
+        width: 100%;
+      }
     }
-  }
-  &__products--3 {
-    & > img {
-      width: 100%;
+    &--3 {
+      & > img {
+        width: 100%;
+      }
     }
-  }
-  &__products--text {
-    position: absolute;
-    color: $color-white;
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 30%;
+    &--text {
+      position: absolute;
+      color: $color-white;
+      text-align: center;
+      left: 10rem;
+      font-size: 2rem;
+      margin-top: 30%;
+    }
   }
 }
-.reviews {
-  background-color: $color-primary;
+.stories {
+  position: relative;
   grid-column: col-start 1 / -1;
   grid-row: 5 / 6;
-  background-color: #aeaeae;
   &__box {
     background-color: $color-primary;
     grid-column: full-start / col-start 1;
@@ -149,7 +153,6 @@
   }
 }
 .images {
-  background-color: goldenrod;
   grid-column: 1 / -1;
   grid-row: 6 / 7;
 }
@@ -186,6 +189,94 @@
         width: 8.3rem;
       }
     }
+  }
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.35;
+  overflow: hidden;
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rbga($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+  & > * {
+    transform: skewX(12deg);
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+  }
+  &__image {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+  }
+  &__text {
+    transform: skewX(12deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__image {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 }
 .gallery {

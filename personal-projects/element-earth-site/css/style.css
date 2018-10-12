@@ -71,7 +71,7 @@ body {
   .nav__list {
     float: right;
     display: grid;
-    grid-template-columns: repeat(2, minmax(1rem, max-content));
+    grid-template-columns: repeat(3, minmax(1rem, max-content));
     justify-content: center;
     align-items: center;
     justify-self: end;
@@ -79,7 +79,8 @@ body {
     grid-column: 2 / -1;
     padding-top: 3rem;
     margin-right: 10rem;
-    margin-top: -3rem; }
+    margin-top: -3rem;
+    list-style: none; }
     .nav__list--item {
       padding: 3rem 2rem; }
     .nav__list--link {
@@ -385,3 +386,6 @@ body {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       transform: scale(1.3);
       cursor: pointer; }
+
+.navbar {
+  background-color: #032222; }

@@ -106,16 +106,18 @@ body {
   position: relative; }
   .featured__box {
     background-color: #032222;
+    position: relative;
     grid-row: 3 / 4;
     grid-column: col-end 8 / -1;
     z-index: 1;
     box-shadow: -3rem 0 5rem rgba(0, 0, 0, 0.5); }
   .featured__title {
+    position: absolute;
+    top: 5rem;
+    left: -7rem;
     color: #fff;
-    font-size: 9rem;
-    writing-mode: vertical-rl;
-    margin-left: -7rem;
-    margin-top: 3rem; }
+    font-size: 8.5rem;
+    writing-mode: vertical-rl; }
   .featured__products {
     grid-column: full-start / col-end 9;
     position: relative; }
@@ -127,8 +129,7 @@ body {
       background-image: url(../../img/climbing-down.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;
-      animation: fadeOut 10s infinite; }
+      background-position: center; }
     .featured__products--2 {
       grid-column: full-start / col-end 8;
       height: 60rem;
@@ -271,14 +272,15 @@ body {
     filter: blur(3px) brightness(80%); }
 
 .gallery {
-  width: 100%;
+  width: 90%;
   display: grid;
   background-color: #000;
-  grid-template-columns: repeat(8, 11vw);
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 8vw);
   box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.3);
   border: 0.5rem solid #000;
   justify-content: center;
+  margin: 0 auto;
   grid-column: 1 / -1;
   grid-row: 5 / 6;
   grid-gap: 1rem;
@@ -346,10 +348,10 @@ body {
     clip-path: polygon(8% 8%, 92.2% 8%, 92.2% 92.2%, 8% 92.2%);
     transition: all 0.5s; }
   .gallery img {
-    transform: scale(1.2); }
+    transform: scale(1.1); }
     .gallery img:hover {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      transform: scale(1.1);
+      transform: scale(1.3);
       cursor: pointer; }
 
 .footer {

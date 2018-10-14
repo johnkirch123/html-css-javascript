@@ -1,3 +1,35 @@
 .navbar {
   background-color: $color-primary;
 }
+.about {
+  background-color: $color-white;
+  grid-column: full-start / full-end;
+  padding: 2rem 20rem;
+  margin-top: -1rem;
+  font-size: 2rem;
+  &__info {
+    grid-column: col-start 2 / col-start 8;
+    &--statement {
+      text-align: center;
+      padding: 4rem;
+    }
+    &--bold {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #222;
+    }
+    &--strong {
+      text-transform: uppercase;
+      font-size: 1.4em;
+      color: #ff3401;
+      font-weight: 800;
+    }
+    &--name {
+      float: right;
+      margin-top: -2.5rem;
+      margin-right: 2rem;
+      font-style: italic;
+      font-size: 1.8rem;
+    }
+  }
+}

@@ -137,7 +137,8 @@ body {
       background-image: url(../../img/product-2.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center; }
+      background-position: center;
+      animation: fadeOut 10s infinite; }
     .featured__products--3 {
       grid-column: full-start / col-end 8;
       height: 60rem;

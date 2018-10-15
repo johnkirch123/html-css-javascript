@@ -99,8 +99,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      // animation-delay: 10s;
-      // animation: fadeOut 10s infinite;
+      animation: fadeOut 10s infinite;
     }
     &--3 {
       grid-column: full-start / col-end 8;

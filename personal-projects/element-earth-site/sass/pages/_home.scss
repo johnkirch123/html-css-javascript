@@ -1,8 +1,6 @@
 .container {
   display: grid;
-  grid-template-rows:
-    8rem calc(100vh - 5vh) minmax(25vw, 60rem) minmax(min-content, 35rem)
-    min-content 15rem;
+  grid-template-rows: 8rem calc(100vh - 5vh) minmax(25vw, 60rem) min-content 15rem;
   grid-template-columns:
     [full-start] 7rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end])
     7rem [full-end];
@@ -15,8 +13,8 @@
   grid-template-columns: repeat(2, 1fr);
   z-index: 1;
   &__logo {
-    height: 11rem;
-    width: 11rem;
+    height: 13rem;
+    width: 13rem;
     margin-left: 4rem;
     margin-top: -1rem;
   }
@@ -46,75 +44,80 @@
   }
 }
 
+.social__icons {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35rem;
+  margin-left: 1rem;
+
+  & > a > img {
+    height: 5em;
+    width: 5rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+}
+
 .featured {
   grid-column: full-start / full-end;
   grid-row: 3 / 4;
-  overflow: hidden;
-  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
   &__box {
     background-color: $color-primary;
-    position: relative;
-    grid-row: 3 / 4;
-    grid-column: col-end 8 / -1;
-
-    z-index: 1;
-    box-shadow: -3rem 0 5rem rgba(0, 0, 0, 0.5);
+    align-self: center;
+    height: 12rem;
+    width: 50%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+    filter: drop-shadow(0 10rem 5rem rgba(0, 0, 0, 0.4));
   }
   &__title {
-    position: absolute;
-    top: 5rem;
-    left: -7rem;
+    margin-top: -3rem;
     color: $color-white;
+    text-align: center;
+    letter-spacing: 0.4rem;
     font-size: 8.5rem;
-    writing-mode: vertical-rl;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
+
   &__products {
     grid-column: full-start / col-end 9;
-    position: relative;
-    &--1 {
-      position: absolute;
-      grid-column: full-start / col-end 8;
-      height: 60rem;
-      width: calc(100% - 7rem);
-      background-image: url(../../img/climbing-down.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      // animation: fadeOut 10s infinite;
-      // animation-delay: 20s;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(35rem, 1fr));
+    grid-gap: 5rem;
+    margin: 0 10vw;
+    &--product {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
     }
-    &--2 {
-      grid-column: full-start / col-end 8;
-      height: 60rem;
-      width: calc(100% - 7rem);
-      background-image: url(../../img/product-2.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      animation: fadeOut 10s infinite;
+
+    &--image {
+      height: 100%;
+      height: 40rem;
+      & > img {
+        width: 100%;
+      }
     }
-    &--3 {
-      grid-column: full-start / col-end 8;
-      height: 60rem;
-      width: calc(100% - 7rem);
-      background-image: url(../../img/product-3.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      animation-delay: 20s;
-      animation: fadeOut 10s infinite;
+
+    &--heading {
+      font-size: 2.2rem;
+      color: $color-white;
+      text-align: center;
+      transform: rotate(270deg);
+      margin-left: -37rem;
+      margin-top: -11rem;
     }
+
     &--text {
-      position: absolute;
-      color: #cecece;
       line-height: 0.5rem;
       letter-spacing: 0.3rem;
       text-align: center;
-      left: 10rem;
-      top: -10rem;
-      font-size: 4rem;
-      margin-top: 30%;
-      z-index: 2;
+      font-size: 2rem;
     }
   }
 }
@@ -251,7 +254,7 @@
   justify-content: center;
   margin: 3rem auto;
   grid-column: 1 / -1;
-  grid-row: 5 / 6;
+  grid-row: 4 / 5;
   &__item {
     &--1 {
       grid-row: 1 / span 2;

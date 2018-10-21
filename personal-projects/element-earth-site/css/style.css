@@ -159,7 +159,7 @@ body {
     align-self: center;
     height: 12rem;
     width: 50%;
-    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+    /* clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0); */
     filter: drop-shadow(0 10rem 5rem rgba(0, 0, 0, 0.4)); }
   .featured__title {
     margin-top: -3rem;
@@ -191,10 +191,7 @@ body {
       margin-left: -37rem;
       margin-top: -11rem; }
     .featured__products--text {
-      line-height: 0.5rem;
-      letter-spacing: 0.3rem;
-      text-align: center;
-      font-size: 2rem; }
+      text-align: center; }
 
 @keyframes fadeOut {
   0% {

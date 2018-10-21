@@ -84,6 +84,13 @@
       1px 1px 0 #000;
   }
 
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 3rem;
+  }
+
   &__products {
     grid-column: full-start / col-end 9;
     display: grid;
@@ -102,12 +109,24 @@
       transform: rotate(180deg);
     }
 
-    & > div > p {
+    & > div > div > p {
       align-self: end;
-      margin: 2rem 1rem;
+      padding: 2rem 1rem;
       text-align: center;
       font-size: 1.5rem;
+      font-weight: 700;
+      background-color: rgba(0, 0, 0, 0.4);
       color: $color-white;
+    }
+
+    &--button {
+      padding: 1rem 2rem;
+      color: $color-white;
+      font-size: 2.6rem;
+      text-align: center;
+      background-color: #7d8f8f;
+      text-decoration: none;
+      font-weight: 700;
     }
   }
 
@@ -118,7 +137,6 @@
     background-position: center;
     background-size: cover;
     &:hover {
-      transform: scale(1.1);
     }
   }
   &__product-2 {

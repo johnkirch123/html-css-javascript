@@ -5,5 +5,10 @@
 @import "base/reset";
 @import "base/utilities";
 
+@import "components/button";
+@import "components/form";
+
 @import "pages/home";
 @import "pages/about";
+@import "pages/login";
+@import "pages/basic";

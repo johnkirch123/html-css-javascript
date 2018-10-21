@@ -98,6 +98,75 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+.u-container {
+  grid-column: 1 / -1;
+  margin: 0 auto; }
+
+.featured__products--button {
+  padding: 1rem 2rem;
+  width: 100%;
+  color: #fff;
+  font-size: 2.6rem;
+  text-align: center;
+  background-color: #7d8f8f;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 0.4rem;
+  margin-left: 1.5rem;
+  filter: drop-shadow(0 0 2rem black); }
+
+.btn {
+  border: none;
+  padding: 1rem 2rem;
+  width: 100%;
+  color: #fff;
+  font-size: 2.6rem;
+  text-align: center;
+  background-color: #7d8f8f;
+  text-decoration: none;
+  font-weight: 700; }
+
+.form {
+  margin-top: 20rem; }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__heading {
+    font-size: 5rem; }
+  .form__input {
+    font-size: 2rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all 0.3s; }
+    @media only screen and (max-width: 56.25em) {
+      .form__input {
+        width: 100%; } }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #032222; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #8b5a22; }
+    .form__input::-webkit-input-placeholder {
+      color: #121212; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+
 .container {
   display: grid;
   grid-template-rows: 8rem calc(100vh - 5vh) minmax(25vw, 60rem) min-content 15rem;
@@ -195,18 +264,6 @@ body {
       font-weight: 700;
       background-color: rgba(0, 0, 0, 0.4);
       color: #fff; }
-    .featured__products--button {
-      padding: 1rem 2rem;
-      width: 100%;
-      color: #fff;
-      font-size: 2.6rem;
-      text-align: center;
-      background-color: #7d8f8f;
-      text-decoration: none;
-      font-weight: 700;
-      margin-top: 0.4rem;
-      margin-left: 1.5rem;
-      filter: drop-shadow(0 0 2rem black); }
   .featured__product-1 {
     display: flex;
     height: 50rem;
@@ -514,3 +571,79 @@ body {
       margin-right: 2rem;
       font-style: italic;
       font-size: 1.8rem; }
+
+.login {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(6, 12vw); }
+  .login__form {
+    grid-column: 2 / -2; }
+
+.basic-container {
+  display: grid;
+  grid-template-rows: 8rem calc(100vh - 23rem) 15rem;
+  grid-template-columns: [full-start] 7rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) 7rem [full-end]; }
+
+.navigation {
+  display: grid;
+  grid-column: full-start / full-end;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row: 1 / 2;
+  background-color: #032222;
+  z-index: 1; }
+  .navigation__logo {
+    height: 13rem;
+    width: 13rem;
+    margin-left: 4rem;
+    margin-top: -1rem; }
+  .navigation__list {
+    float: right;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1rem, max-content));
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    grid-row: 1 / 2;
+    grid-column: 2 / -1;
+    padding-top: 5rem;
+    margin-right: 10rem;
+    margin-top: -7rem;
+    list-style: none; }
+    .navigation__list--item {
+      padding: 3rem 2rem; }
+    .navigation__list--link {
+      padding: 2rem;
+      text-decoration: none;
+      color: #fff;
+      font-size: 2.6rem;
+      font-weight: bold; }
+
+.footer__basic {
+  background-color: #032222;
+  grid-row: 3 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between; }
+  .footer__basic--contact {
+    width: 50%;
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 1.8rem; }
+    .footer__basic--contact-info > a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold; }
+  .footer__basic--social {
+    margin-right: 5rem;
+    align-self: center; }
+    .footer__basic--social > a > img {
+      height: 8rem;
+      width: 8rem;
+      border-radius: 50%;
+      margin-right: 3rem; }
+      .footer__basic--social > a > img:hover {
+        height: 8.3rem;
+        width: 8.3rem; }

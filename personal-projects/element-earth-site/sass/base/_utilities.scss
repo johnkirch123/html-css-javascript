@@ -29,3 +29,8 @@
 .u-margin-top-huge {
   margin-top: 10rem !important;
 }
+
+.u-container {
+  grid-column: 1 / -1;
+  margin: 0 auto;
+}

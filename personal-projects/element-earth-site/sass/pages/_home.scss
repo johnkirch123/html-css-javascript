@@ -21,7 +21,7 @@
   &__list {
     float: right;
     display: grid;
-    grid-template-columns: repeat(3, minmax(1rem, max-content));
+    grid-template-columns: repeat(4, minmax(15rem, max-content));
     justify-content: center;
     align-items: center;
     justify-self: end;
@@ -57,6 +57,10 @@
     width: 5rem;
     border-radius: 50%;
     margin-bottom: 0.5rem;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.4s ease-in-out;
+    }
   }
 }
 
@@ -68,9 +72,9 @@
   flex-direction: column;
 
   &__box {
-    background: linear-gradient(to bottom, $color-primary, rgba(0, 0, 0, 0.7));
+    background-color: $color-primary;
     align-self: center;
-    height: 12rem;
+    height: 8rem;
     width: 100%;
     margin-bottom: 2rem;
     /* clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0); */
@@ -80,7 +84,8 @@
     color: $color-white;
     text-align: center;
     letter-spacing: 0.4rem;
-    font-size: 8.5rem;
+    font-size: 6.5rem;
+    margin-top: -1rem;
   }
 
   &__right {
@@ -94,8 +99,8 @@
     grid-column: full-start / col-end 9;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5rem;
-    margin: 3rem 10vw;
+    grid-gap: 10rem;
+    margin: 5rem 15vw;
 
     & > div > h4 {
       height: 100%;
@@ -335,7 +340,9 @@
   margin: 3rem auto;
   grid-column: 1 / -1;
   grid-row: 4 / 5;
-  margin-top: 10rem;
+  margin-top: 15rem;
+
+  filter: drop-shadow(2rem 2rem 5rem rgba(0, 0, 0, 0.6));
   &__item {
     &--1 {
       grid-row: 1 / span 2;
@@ -458,8 +465,8 @@
       border-radius: 50%;
       margin-right: 3rem;
       &:hover {
-        height: 8.3rem;
-        width: 8.3rem;
+        transform: scale(1.2);
+        transition: all 0.2s ease-in-out;
       }
     }
   }

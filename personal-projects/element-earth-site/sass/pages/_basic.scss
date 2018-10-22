@@ -1,6 +1,6 @@
 .basic-container {
   display: grid;
-  grid-template-rows: 8rem calc(100vh - 23rem) 15rem;
+  grid-template-rows: 8rem minmax(calc(100vh - 23rem), min-content) 15rem;
   grid-template-columns:
     [full-start] 7rem repeat(8, [col-start] minmax(min-content, 1fr) [col-end])
     7rem [full-end];

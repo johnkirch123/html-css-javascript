@@ -28,7 +28,7 @@
     grid-row: 1 / 2;
     grid-column: 2 / -1;
     padding-top: 5rem;
-    margin-right: 10rem;
+    margin-right: 5rem;
     margin-top: -3rem;
     list-style: none;
     &--item {
@@ -78,7 +78,7 @@
     width: 100%;
     margin-bottom: 2rem;
     /* clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0); */
-    filter: drop-shadow(0 10rem 5rem rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 0 5rem rgba(0, 0, 0, 0.6));
   }
   &__title {
     color: $color-white;

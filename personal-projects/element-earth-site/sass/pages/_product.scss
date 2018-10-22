@@ -1,0 +1,36 @@
+.product {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  &__heading {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+
+  &__area {
+    display: flex;
+    justify-content: start;
+  }
+
+  &__image {
+    width: 50%;
+    margin-left: 10rem;
+
+    &--main {
+      background-color: #555;
+      height: 60rem;
+      width: 60rem;
+    }
+  }
+
+  &__info {
+    &--heading {
+      font-size: 3.4rem;
+      font-weight: 700;
+    }
+    &--price {
+      font-size: 2rem;
+    }
+  }
+}

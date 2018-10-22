@@ -210,6 +210,7 @@ body {
 .navigation {
   display: grid;
   grid-column: full-start / full-end;
+  grid-template-rows: repeat(2, 4rem);
   grid-template-columns: repeat(2, 1fr);
   grid-row: 1 / 2;
   background-color: #032222;
@@ -222,18 +223,16 @@ body {
   .navigation__list {
     float: right;
     display: grid;
-    grid-template-columns: repeat(3, minmax(1rem, max-content));
+    grid-template-columns: repeat(5, min-content);
     justify-content: center;
     align-items: center;
     justify-self: end;
     grid-row: 1 / 2;
     grid-column: 2 / -1;
-    padding-top: 5rem;
-    margin-right: 10rem;
-    margin-top: -7rem;
-    list-style: none; }
+    list-style: none;
+    margin-right: 0.8rem; }
     .navigation__list--item {
-      padding: 3rem 2rem; }
+      padding: 3rem 0; }
     .navigation__list--link {
       padding: 2rem;
       text-decoration: none;
@@ -280,7 +279,7 @@ body {
   display: grid;
   background-color: transparent;
   grid-column: full-start / full-end;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 4rem);
   grid-template-columns: repeat(2, 1fr);
   z-index: 1; }
   .nav__logo {
@@ -289,22 +288,20 @@ body {
     margin-left: 4rem;
     margin-top: -1rem; }
   .nav__list {
-    float: right;
+    justify-content: end;
     display: grid;
-    grid-template-columns: repeat(4, minmax(15rem, max-content));
-    justify-content: center;
-    align-items: center;
-    justify-self: end;
+    grid-template-columns: repeat(4, min-content);
     grid-row: 1 / 2;
     grid-column: 2 / -1;
     padding-top: 5rem;
-    margin-right: 5rem;
-    margin-top: -3rem;
-    list-style: none; }
+    list-style: none;
+    margin-right: 2rem; }
     .nav__list--item {
-      padding: 3rem 2rem; }
+      padding: 0 2rem; }
+      .nav__list--item:hover {
+        transform: scale(1.1);
+        text-shadow: 0 0 3rem #000; }
     .nav__list--link {
-      padding: 2rem;
       text-decoration: none;
       color: #fff;
       font-size: 2.6rem;
@@ -658,32 +655,56 @@ body {
   .login__form {
     grid-column: 2 / -2; }
 
-.products__heading {
-  font-size: 5rem; }
+.products {
+  padding: 0 5rem; }
+  .products__heading {
+    font-size: 5rem; }
+  .products__area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  .products__product {
+    display: flex;
+    height: 50rem;
+    width: 35rem;
+    background-image: url(../../img/product-1.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: drop-shadow(2rem 2rem 5rem rgba(0, 0, 0, 0.6));
+    position: relative;
+    margin: 5rem 3rem; }
+    .products__product:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); }
+    .products__product:hover:before {
+      opacity: 0;
+      transition: all 0.5s ease-out; }
 
-.products__area {
+.product {
+  grid-column: 1 / -1;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; }
-
-.products__product {
-  display: flex;
-  height: 50rem;
-  width: 30rem;
-  background-image: url(../../img/product-1.jpg);
-  background-position: center;
-  background-size: cover;
-  filter: drop-shadow(2rem 2rem 5rem rgba(0, 0, 0, 0.6));
-  position: relative;
-  margin: 5rem 3rem; }
-  .products__product:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); }
-  .products__product:hover:before {
-    opacity: 0;
-    transition: all 0.5s ease-out; }
+  flex-direction: column;
+  padding: 5rem; }
+  .product__heading {
+    font-size: 5rem;
+    font-weight: 700; }
+  .product__area {
+    display: flex;
+    justify-content: start; }
+  .product__image {
+    width: 50%;
+    margin-left: 10rem; }
+    .product__image--main {
+      background-color: #555;
+      height: 60rem;
+      width: 60rem; }
+  .product__info--heading {
+    font-size: 3.4rem;
+    font-weight: 700; }
+  .product__info--price {
+    font-size: 2rem; }

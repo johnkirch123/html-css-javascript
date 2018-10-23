@@ -11,6 +11,10 @@ const keys = require("../../config/keys");
 // 8. require passport
 const passport = require("passport");
 
+// Load Input Validation
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
+
 // 3. create a test route returning json for react to use
 // @route   GET api/users/test
 // @desc    Tests users route
@@ -22,13 +26,20 @@ router.get("/test", (req, res) => res.json({ msg: "Users Works" }));
 // @desc    Register user
 // @access  Public
 router.post("/register", (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
   // find One email, to make sure user is not already registered.
   User.findOne({ email: req.body.email })
     .then(user => {
       // after user returned, check to see if there was a user (truthy)
       // and return error, else create the user and save to db.
       if (user) {
-        return res.status(400).json({ email: "Email already exists" });
+        errors.email = "Email already exists";
+        return res.status(400).json(errors);
       } else {
         // Create a gravatar constant
         const avatar = gravatar.url(req.body.email, {
@@ -67,6 +78,11 @@ router.post("/register", (req, res) => {
 // @desc    Login user
 // @access  Public
 router.post("/login", (req, res) => {
+  const { isValid, errors } = validateLoginInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
   const email = req.body.email;
   const password = req.body.password;
   //Find user by email with user model
@@ -74,7 +90,8 @@ router.post("/login", (req, res) => {
     .then(user => {
       // If user does not exist return 404 and set error
       if (!user) {
-        return res.status(404).json({ email: "User not found" });
+        errors.email = "User not found";
+        return res.status(404).json(errors);
       } else {
         // Check password using bcrypt to check the entered password to the
         // hashed password
@@ -87,7 +104,6 @@ router.post("/login", (req, res) => {
               name: user.name,
               avatar: user.avatar
             };
-            console.log(keys.secretOrKey);
             // 7. Sign the Token and return the Bearer token via JSON
             jwt.sign(
               payload,
@@ -102,7 +118,8 @@ router.post("/login", (req, res) => {
             );
           } else {
             // return 'Bad Request Error' 400 code and a password object for error handling
-            return res.status(400).json({ password: "Incorrect password" });
+            errors.password = "Email or Password are incorrect";
+            return res.status(400).json(errors);
           }
         });
       }

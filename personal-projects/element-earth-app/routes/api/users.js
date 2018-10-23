@@ -8,6 +8,8 @@ const bcrypt = require("bcryptjs");
 // 7. require JWT and keys for the secret
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+// 8. require passport
+const passport = require("passport");
 
 // 3. create a test route returning json for react to use
 // @route   GET api/users/test
@@ -85,10 +87,11 @@ router.post("/login", (req, res) => {
               name: user.name,
               avatar: user.avatar
             };
+            console.log(keys.secretOrKey);
             // 7. Sign the Token and return the Bearer token via JSON
             jwt.sign(
               payload,
-              keys.secret,
+              keys.secretOrKey,
               { expiresIn: 86400 },
               (err, token) => {
                 res.json({
@@ -106,6 +109,21 @@ router.post("/login", (req, res) => {
     })
     .catch(err => console.log(err));
 });
+// 8. return the current user
+// @route   GET api/users/current
+// @desc    Return current user
+// @access  Private
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      id: req.user.id,
+      name: req.user.name,
+      email: req.user.email
+    });
+  }
+);
 
 // 3. export router as a module
 module.exports = router;

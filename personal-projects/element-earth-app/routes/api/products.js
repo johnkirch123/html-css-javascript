@@ -1,5 +1,6 @@
 // 3. require express const & router const
 const express = require("express");
+const Product = require("../../models/Product");
 const router = express.Router();
 
 // 3. create a test route returning json for react to use

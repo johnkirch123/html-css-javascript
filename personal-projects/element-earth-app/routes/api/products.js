@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.status(200).json(products);
+      res.json(products);
     }
   });
 });
@@ -31,8 +31,35 @@ router.get("/:id", (req, res) => {
     );
 });
 
+// @route   PUT api/products/:id/edit
+// @desc    edit product
+// @access  Private
+router.put("/:id", (req, res) => {
+  const errors = {};
+  errors.productUpdateError = "This product was not properly updated.";
+  const editedProduct = ({
+    name,
+    description,
+    price,
+    type,
+    set,
+    modelNumber,
+    available,
+    count
+  } = req.body);
+  Product.findById(req.params.id)
+    .then(product => {
+      Product.findByIdAndUpdate(
+        { _id: req.params.id },
+        { $set: editedProduct },
+        { new: true }
+      ).then(product => res.json(product));
+    })
+    .catch(err => res.status(404).json(errors));
+});
+
 /* TODO ALLOW ONLY ADMIN TO THIS ROUTE */
-// @route   Post api/products/
+// @route   POST api/products/
 // @desc    Create a new product
 // @access  Private
 router.post("/", (req, res) => {
@@ -49,6 +76,19 @@ router.post("/", (req, res) => {
     } = req.body)
   );
   newProduct.save().then(product => res.json(product));
+});
+
+/* TODO ALLOW ONLY ADMIN TO THIS ROUTE */
+// @route   DELETE api/products/:id
+// @desc    Delete a product
+// @access  Private
+router.delete("/:id", (req, res) => {
+  Product.findOneAndRemove({ _id: req.params.id })
+    .then((err, product) => {
+      if (err) res.send(err);
+      else res.json(product);
+    })
+    .catch(err => res.status(404).json({ msg: "Something went wrong" }));
 });
 
 module.exports = router;

@@ -19,6 +19,7 @@
     "eslint-plugin-react": "^6.8.0"
   },
   "dependencies": {
+    "graphql": "^14.0.2",
     "lodash": "4.x.x",
     "strapi": "3.0.0-alpha.14.4.0",
     "strapi-hook-mongoose": "3.0.0-alpha.14.4.0"

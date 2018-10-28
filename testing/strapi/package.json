@@ -1,0 +1,14 @@
+{
+  "name": "strapi_test",
+  "version": "1.0.0",
+  "description": "a strapi test",
+  "main": "index.js",
+  "scripts": {
+    "strapi": "strapi"
+  },
+  "author": "John Kirch",
+  "license": "MIT",
+  "dependencies": {
+    "strapi": "^1.6.4"
+  }
+}

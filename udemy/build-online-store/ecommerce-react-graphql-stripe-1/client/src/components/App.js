@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // prettier-ignore
-import { Container, Box, Heading, Card, Image, Text, SearchField, Icon, Spinner } from "gestalt";
+import { Container, Box, Heading, Card, Image, Text, SearchField, Icon } from "gestalt";
 import Loader from "./Loader";
 import { Link } from "react-router-dom";
 import "./App.css";
@@ -120,7 +120,7 @@ class App extends Component {
                   </Text>
                   <Text>{brand.description}</Text>
                   <Text bold size="xl">
-                    <Link to={`/{brand._id}`}>See Brews</Link>
+                    <Link to={`/${brand._id}`}>See Brews</Link>
                   </Text>
                 </Box>
               </Card>

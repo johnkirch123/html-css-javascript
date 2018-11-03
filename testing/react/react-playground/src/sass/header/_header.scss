@@ -1,6 +1,33 @@
-h1 {
-  color: red;
-  & > span {
-    color: blue;
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.activeStyle {
+  color: blue;
+}
+
+.header {
+  background-color: darkblue;
+  height: 4rem;
+  font-size: 1.5rem;
+  &__links {
+    margin-top: 0rem;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    &--link {
+      margin-top: 1rem;
+      & > a {
+        color: white;
+        text-decoration: none;
+
+        :hover,
+        :visited {
+          transform: scale(1.2);
+        }
+      }
+    }
   }
 }

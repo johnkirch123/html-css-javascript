@@ -1,4 +1,25 @@
-h1 {
-  color: red; }
-  h1 > span {
-    color: blue; }
+html,
+body {
+  padding: 0;
+  margin: 0; }
+
+.activeStyle {
+  color: blue; }
+
+.header {
+  background-color: darkblue;
+  height: 4rem;
+  font-size: 1.5rem; }
+  .header__links {
+    margin-top: 0rem;
+    display: flex;
+    justify-content: space-around;
+    list-style: none; }
+    .header__links--link {
+      margin-top: 1rem; }
+      .header__links--link > a {
+        color: white;
+        text-decoration: none; }
+        .header__links--link > a :hover,
+        .header__links--link > a :visited {
+          transform: scale(1.2); }

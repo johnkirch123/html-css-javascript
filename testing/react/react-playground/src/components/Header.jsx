@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Header extends Component {
   state = {
@@ -10,19 +10,19 @@ class Header extends Component {
       <header className="header">
         <ul className="header__links">
           <li className="header__links--link">
-            <Link activeClassName="activeStyle" to="/">
+            <NavLink activeClassName="active" exact to="/">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="header__links--link">
-            <Link activeClassName="activeStyle" to="/about">
+            <NavLink activeClassName="active" to="/about">
               About
-            </Link>
+            </NavLink>
           </li>
           <li className="header__links--link">
-            <Link activeClassName="activeStyle" to="/contact">
+            <NavLink activeClassName="active" to="/contact">
               Contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </header>

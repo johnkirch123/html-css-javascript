@@ -12,10 +12,10 @@ import "./css/style.css";
 class App extends Component {
   state = {
     firstname: "John",
-    lastName: "Kirch",
+    lastname: "Kirch",
     age: 38,
     greeting: () => {
-      return `Hello ${this.firstname} ${this.lastName}`;
+      return `Hello ${this.firstname} ${this.lastname}`;
     }
   };
   render() {

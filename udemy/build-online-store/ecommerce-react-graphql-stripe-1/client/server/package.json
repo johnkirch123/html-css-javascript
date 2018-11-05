@@ -22,6 +22,7 @@
     "graphql": "^14.0.2",
     "lodash": "4.x.x",
     "strapi": "3.0.0-alpha.14.4.0",
+    "strapi-email-sendgrid": "^3.0.0-alpha.14.4.0",
     "strapi-hook-mongoose": "3.0.0-alpha.14.4.0",
     "stripe": "^6.13.0"
   },

@@ -4,10 +4,11 @@ class Home extends Component {
   state = {};
 
   render() {
-    console.log(this.props);
     return (
       <div className="home">
+        {console.log(this.props)}
         <h1>Home Page</h1>
+        {`Hello ${this.props.info.firstname}`}
       </div>
     );
   }

@@ -13,10 +13,7 @@ class App extends Component {
   state = {
     firstname: "John",
     lastname: "Kirch",
-    age: 38,
-    greeting: () => {
-      return `Hello ${this.firstname} ${this.lastname}`;
-    }
+    age: 38
   };
   render() {
     return (

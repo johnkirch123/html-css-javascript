@@ -7,6 +7,7 @@ import Checkout from "./components/Checkout";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Social from "./components/Social";
 
 import * as serviceWorker from "./serviceWorker";
@@ -24,6 +25,7 @@ const Root = () => (
           <Route component={Checkout} path="/checkout" />
         </Switch>
       </div>
+      <Footer />
     </React.Fragment>
   </Router>
 );

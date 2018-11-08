@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import App from "./components/App";
+import Products from "./components/Products";
+import Faqs from "./components/Faqs";
 import Checkout from "./components/Checkout";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -23,6 +25,8 @@ const Root = () => (
           <Route component={Signin} path="/signin" />
           <Route component={Signup} path="/signup" />
           <Route component={Checkout} path="/checkout" />
+          <Route component={Products} path="/products" />
+          <Route component={Faqs} path="/Faqs" />
         </Switch>
       </div>
       <Footer />

@@ -14,14 +14,22 @@ import Social from "./components/Social";
 
 import * as serviceWorker from "./serviceWorker";
 
+let container = "container";
+let mainRoute = false;
+
 const Root = () => (
   <Router>
     <React.Fragment>
-      <div className="container">
-        <Navbar />
+      <div className={container}>
+        <Navbar mainRoute={mainRoute} />
         <Social />
         <Switch>
-          <Route component={App} exact path="/" />
+          {<Route component={App} exact path="/" /> ? (
+            (container = "container") &&
+            (mainRoute = true) && <Route component={App} exact path="/" />
+          ) : (
+            (container = "basic-container")
+          )}
           <Route component={Signin} path="/signin" />
           <Route component={Signup} path="/signup" />
           <Route component={Checkout} path="/checkout" />

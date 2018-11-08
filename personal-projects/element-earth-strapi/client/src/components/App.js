@@ -25,24 +25,29 @@ import sql from "../img/sql.png";
 import "./App.css";
 
 class App extends Component {
+  currentLocation = () => {
+    const currentLocation = this.props.location.pathname;
+    console.log(currentLocation);
+  };
   render() {
     return (
       <React.Fragment>
-        <ul id="nav__slide" class="nav__slider">
+        <ul id="nav__slide" className="nav__slider">
+          {this.currentLocation()}
           <li>
-            <img src={bg1} alt="Image 1" />
+            <img src={bg1} alt="Rock climber with beautiful vista" />
           </li>
           <li>
-            <img src={bg2} alt="Image 2" />
+            <img src={bg2} alt="Rock climber with beautiful vista" />
           </li>
           <li>
-            <img src={bg3} alt="Image 3" />
+            <img src={bg3} alt="Rock climber with beautiful vista" />
           </li>
           <li>
-            <img src={bg4} alt="Image 4" />
+            <img src={bg4} alt="Rock climber with beautiful vista" />
           </li>
           <li>
-            <img src={bg5} alt="Image 5" />
+            <img src={bg5} alt="Rock climber with beautiful vista" />
           </li>
         </ul>
         <section className="featured">

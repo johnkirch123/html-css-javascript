@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
@@ -15,7 +14,11 @@ const Footer = () => (
       <div className="footer__contact--info">
         <p>Nicholas Diederich - Owner</p>
         <p>970-555-5555</p>
-        <a href="http://www.elementearth3d.com" target="_blank">
+        <a
+          href="http://www.elementearth3d.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Contact Us
         </a>
       </div>
@@ -24,12 +27,14 @@ const Footer = () => (
       <a
         href="https://www.instagram.com/elementearth3d.climbingholds/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <img src={instagram} alt="instagram link" />
       </a>
       <a
         href="https://www.facebook.com/Nicholas3DClimbingHolds"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <img src={facebook} alt="facebook link" />
       </a>

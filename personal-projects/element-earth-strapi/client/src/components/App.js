@@ -25,15 +25,14 @@ import sql from "../img/sql.png";
 import "./App.css";
 
 class App extends Component {
-  currentLocation = () => {
-    const currentLocation = this.props.location.pathname;
-    console.log(currentLocation);
-  };
+  // currentLocation = () => {
+  //   const currentLocation = this.props.location.pathname;
+  //   console.log(currentLocation);
+  // };
   render() {
     return (
       <React.Fragment>
         <ul id="nav__slide" className="nav__slider">
-          {this.currentLocation()}
           <li>
             <img src={bg1} alt="Rock climber with beautiful vista" />
           </li>

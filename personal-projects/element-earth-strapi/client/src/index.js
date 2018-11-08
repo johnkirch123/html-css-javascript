@@ -22,14 +22,11 @@ const Root = () => (
     <React.Fragment>
       <div className={container}>
         <Navbar mainRoute={mainRoute} />
+        {console.log(`Main Route: ${mainRoute}`)}
+        {console.log(`Container: ${container}`)}
         <Social />
         <Switch>
-          {<Route component={App} exact path="/" /> ? (
-            (container = "container") &&
-            (mainRoute = true) && <Route component={App} exact path="/" />
-          ) : (
-            (container = "basic-container")
-          )}
+          <Route component={App} exact path="/" />
           <Route component={Signin} path="/signin" />
           <Route component={Signup} path="/signup" />
           <Route component={Checkout} path="/checkout" />

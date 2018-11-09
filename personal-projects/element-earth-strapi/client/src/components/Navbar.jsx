@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 import eeLogo from "../img/ee-logo-transparent.svg";
-import Faqs from "./Faqs";
-import Signup from "./Signup";
-import Signin from "./Signin";
+
+import { getNavbar } from "../utils/Utils";
 
 const HomeNavbar = () => (
   <nav className="nav">
@@ -65,9 +64,18 @@ const BasicNavbar = () => (
   </nav>
 );
 
-const Navbar = props => {
-  console.log(props.mainRoute);
-  return props.mainRoute ? <HomeNavbar /> : <BasicNavbar />;
-};
+class Navbar extends Component {
+  state = {
+    route: ""
+  };
+
+  render() {
+    return getNavbar() === "/" || getNavbar() === "" ? (
+      <HomeNavbar />
+    ) : (
+      <BasicNavbar />
+    );
+  }
+}
 
 export default Navbar;

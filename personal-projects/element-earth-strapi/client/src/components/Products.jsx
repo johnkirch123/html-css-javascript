@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import { setNavbar, getNavbar } from "../utils/Utils";
 
 class Products extends Component {
+  componentDidMount = () => {
+    setNavbar(this.props.match.path);
+    console.log(getNavbar());
+  };
+
   render() {
     return (
       <section className="u-container products u-center-text">

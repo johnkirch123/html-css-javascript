@@ -15,15 +15,11 @@ import Social from "./components/Social";
 import * as serviceWorker from "./serviceWorker";
 
 let container = "container";
-let mainRoute = false;
-
 const Root = () => (
   <Router>
     <React.Fragment>
       <div className={container}>
-        <Navbar mainRoute={mainRoute} />
-        {console.log(`Main Route: ${mainRoute}`)}
-        {console.log(`Container: ${container}`)}
+        <Navbar />
         <Social />
         <Switch>
           <Route component={App} exact path="/" />

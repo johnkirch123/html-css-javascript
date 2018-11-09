@@ -65,16 +65,8 @@ const BasicNavbar = () => (
 );
 
 class Navbar extends Component {
-  state = {
-    route: ""
-  };
-
   render() {
-    return getNavbar() === "/" || getNavbar() === "" ? (
-      <HomeNavbar />
-    ) : (
-      <BasicNavbar />
-    );
+    return false ? <BasicNavbar /> : <HomeNavbar />;
   }
 }
 

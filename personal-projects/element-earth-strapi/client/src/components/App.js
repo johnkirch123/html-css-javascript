@@ -23,19 +23,9 @@ import ml from "../img/ml.jpg";
 import bootstrap from "../img/bootstrap.svg";
 import sql from "../img/sql.png";
 import "./App.css";
-import { setNavbar, getNavbar } from "../utils/Utils";
 
 class App extends Component {
-  // currentLocation = () => {
-  //   const currentLocation = this.props.location.pathname;
-  //   console.log(currentLocation);
-  // };
-  componentDidMount = () => {
-    console.log(getNavbar());
-  };
-
   render() {
-    setNavbar(this.props.match.path);
     return (
       <React.Fragment>
         <ul id="nav__slide" className="nav__slider">

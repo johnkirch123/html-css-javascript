@@ -92,6 +92,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem !important; }
 
+.u-margin-top-small {
+  margin-bottom: 3rem !important; }
+
 .u-margin-top-medium {
   margin-top: 5rem; }
 
@@ -293,7 +296,7 @@ body {
   .nav__list {
     justify-content: end;
     display: grid;
-    grid-template-columns: repeat(4, min-content);
+    grid-template-columns: repeat(5, min-content);
     grid-row: 1 / 2;
     grid-column: 2 / -1;
     padding-top: 5rem;
@@ -301,6 +304,11 @@ body {
     margin-right: 2rem; }
     .nav__list--item {
       padding: 0 2rem; }
+      .nav__list--item > i {
+        margin: 1rem; }
+      .nav__list--item:first-child {
+        color: #fff;
+        display: flex; }
       .nav__list--item:hover {
         transform: scale(1.1);
         text-shadow: 0 0 3rem #000; }
@@ -685,16 +693,19 @@ body {
     align-items: flex-start;
     margin-left: 5rem; }
     .product__info--heading {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 3.4rem;
       font-weight: 700; }
     .product__info--price {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 2rem; }
     .product__info--description {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 2rem;
       text-align: left; }
+    .product__info > a {
+      font-size: 1.6rem;
+      color: #000; }
     .product__info > button {
       margin-top: 3rem;
       max-width: 50rem !important; }

@@ -40,18 +40,23 @@
     align-items: flex-start;
     margin-left: 5rem;
     &--heading {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 3.4rem;
       font-weight: 700;
     }
     &--price {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 2rem;
     }
     &--description {
-      margin-top: 5rem;
+      margin-top: 4rem;
       font-size: 2rem;
       text-align: left;
+    }
+
+    & > a {
+      font-size: 1.6rem;
+      color: $color-black;
     }
 
     & > button {

@@ -21,7 +21,7 @@
   &__list {
     justify-content: end;
     display: grid;
-    grid-template-columns: repeat(4, min-content);
+    grid-template-columns: repeat(5, min-content);
     grid-row: 1 / 2;
     grid-column: 2 / -1;
     padding-top: 5rem;
@@ -29,6 +29,16 @@
     margin-right: 2rem;
     &--item {
       padding: 0 2rem;
+
+      & > i {
+        margin: 1rem;
+      }
+
+      &:first-child {
+        color: $color-white;
+        display: flex;
+      }
+
       &:hover {
         transform: scale(1.1);
         text-shadow: 0 0 3rem #000;

@@ -1,0 +1,18 @@
+.checkout {
+  width: 85%;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+  background-color: $color-primary-3;
+  height: 25rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  &__all {
+    width: 75%;
+    margin: 0 auto;
+  }
+}

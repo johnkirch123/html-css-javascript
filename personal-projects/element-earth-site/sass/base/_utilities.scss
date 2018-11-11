@@ -10,6 +10,14 @@
   }
 }
 
+.u-margin-bottom-reset {
+  margin-bottom: 0 !important;
+
+  @include respond(tab-port) {
+    margin-bottom: 0 !important;
+  }
+}
+
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important;
 

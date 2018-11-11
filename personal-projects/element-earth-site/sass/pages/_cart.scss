@@ -37,15 +37,15 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin: 2rem 0;
+  margin: 1rem 0;
 
   &--image {
-    width: 20rem;
-    height: 20rem;
+    width: 12rem;
+    height: 12rem;
 
     & > img {
-      width: 20rem;
-      height: 20rem;
+      width: 12rem;
+      height: 12rem;
       object-fit: cover;
     }
   }
@@ -81,7 +81,7 @@
   background-color: $color-primary-3;
   height: 25rem;
   margin: 3rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

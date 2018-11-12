@@ -4,8 +4,12 @@ import { setRoute } from "./Navbar";
 
 class Products extends Component {
   render() {
+    const { routeHandler } = this.props;
     return (
       <section className="u-container products u-center-text">
+        {this.props.route !== this.props.match.path
+          ? routeHandler(this.props.match.path)
+          : ""}
         <h1 className="products__heading u-margin-top-medium">Products</h1>
         <div className="products__area">
           <div className="products__product">

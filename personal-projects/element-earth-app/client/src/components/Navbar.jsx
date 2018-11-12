@@ -66,7 +66,7 @@ const BasicNavbar = () => (
 
 class Navbar extends Component {
   render() {
-    return false ? <BasicNavbar /> : <HomeNavbar />;
+    return this.props.route !== "/" ? <BasicNavbar /> : <HomeNavbar />;
   }
 }
 

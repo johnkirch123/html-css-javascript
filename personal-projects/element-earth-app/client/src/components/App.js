@@ -26,8 +26,12 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const { routeHandler } = this.props;
     return (
       <React.Fragment>
+        {this.props.route !== this.props.match.path
+          ? routeHandler(this.props.match.path)
+          : ""}
         <ul id="nav__slide" className="nav__slider">
           <li>
             <img src={bg1} alt="Rock climber with beautiful vista" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,25 +17,61 @@ import * as serviceWorker from "./serviceWorker";
 let container = "container";
 
 // refactor to a class to use state for Navbar
-const Root = () => (
-  <Router>
-    <React.Fragment>
-      <div className={container}>
-        <Navbar />
-        <Social />
-        <Switch>
-          <Route component={App} exact path="/" />
-          <Route component={Signin} path="/signin" />
-          <Route component={Signup} path="/signup" />
-          <Route component={Checkout} path="/checkout" />
-          <Route component={Products} path="/products" />
-          <Route component={Faqs} path="/Faqs" />
-        </Switch>
-      </div>
-      <Footer />
-    </React.Fragment>
-  </Router>
-);
+class Root extends Component {
+  state = {
+    route: ""
+  };
+
+  setRoute = route => {
+    this.setState({ route });
+  };
+  render() {
+    return (
+      <Router>
+        <React.Fragment>
+          <div className={container}>
+            <Navbar route={this.state.route} />
+            <Social />
+            <Switch>
+              <Route
+                component={props => {
+                  return (
+                    <App
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                exact
+                path="/"
+              />
+              <Route component={Signin} path="/signin" />
+              <Route component={Signup} path="/signup" />
+              <Route component={Checkout} path="/checkout" />
+              <Route
+                component={props => {
+                  return (
+                    <Products
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/products"
+              />
+              <Route component={Faqs} path="/Faqs" />
+            </Switch>
+          </div>
+          <Footer />
+        </React.Fragment>
+      </Router>
+    );
+  }
+}
+
+export default Root;
 
 ReactDOM.render(<Root />, document.getElementById("root"));
 serviceWorker.unregister();

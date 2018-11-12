@@ -381,7 +381,7 @@ body {
 .nav__list {
   justify-content: end;
   display: grid;
-  grid-template-columns: repeat(4, min-content);
+  grid-template-columns: repeat(5, min-content);
   grid-row: 1 / 2;
   grid-column: 2 / -1;
   padding-top: 5rem;
@@ -400,6 +400,14 @@ body {
   color: #fff;
   font-size: 2.6rem;
   font-weight: bold;
+}
+.nav__list--item > i {
+  margin: 0.5rem;
+}
+
+.nav__list--item:first-child {
+  color: #fff;
+  display: flex;
 }
 
 .social__icons {

@@ -11,6 +11,7 @@ import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Social from "./components/Social";
+import Cart from "./components/Cart";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -23,6 +24,7 @@ class Root extends Component {
   };
 
   setRoute = route => {
+    console.log(route);
     this.setState({ route });
   };
   render() {
@@ -46,9 +48,42 @@ class Root extends Component {
                 exact
                 path="/"
               />
-              <Route component={Signin} path="/signin" />
-              <Route component={Signup} path="/signup" />
-              <Route component={Checkout} path="/checkout" />
+              <Route
+                component={props => {
+                  return (
+                    <Signin
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/signin"
+              />
+              <Route
+                component={props => {
+                  return (
+                    <Signup
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/signup"
+              />
+              <Route
+                component={props => {
+                  return (
+                    <Checkout
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/checkout"
+              />
               <Route
                 component={props => {
                   return (
@@ -61,7 +96,42 @@ class Root extends Component {
                 }}
                 path="/products"
               />
-              <Route component={Faqs} path="/Faqs" />
+              <Route
+                component={props => {
+                  return (
+                    <Faqs
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/faqs"
+              />
+              <Route
+                component={props => {
+                  return (
+                    <Cart
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/cart"
+              />
+              <Route
+                component={props => {
+                  return (
+                    <Checkout
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/checkout"
+              />
             </Switch>
           </div>
           <Footer />

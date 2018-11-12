@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Signin extends Component {
+class Cart extends Component {
   render() {
     const { routeHandler } = this.props;
     return (
@@ -8,10 +8,10 @@ class Signin extends Component {
         {this.props.route !== this.props.match.path
           ? routeHandler(this.props.match.path)
           : ""}
-        Signin
+        Cart
       </div>
     );
   }
 }
 
-export default Signin;
+export default Cart;

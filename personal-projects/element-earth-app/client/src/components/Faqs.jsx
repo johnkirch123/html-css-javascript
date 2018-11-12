@@ -2,7 +2,15 @@ import React, { Component } from "react";
 
 class Faqs extends Component {
   render() {
-    return <div>Faqs</div>;
+    const { routeHandler } = this.props;
+    return (
+      <div>
+        {this.props.route !== this.props.match.path
+          ? routeHandler(this.props.match.path)
+          : ""}
+        Faqs
+      </div>
+    );
   }
 }
 

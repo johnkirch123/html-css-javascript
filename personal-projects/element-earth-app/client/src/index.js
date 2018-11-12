@@ -16,6 +16,7 @@ import * as serviceWorker from "./serviceWorker";
 
 let container = "container";
 
+// refactor to a class to use state for Navbar
 const Root = () => (
   <Router>
     <React.Fragment>

@@ -1,0 +1,29 @@
+// SASS style sheet */
+// Palette color codes */
+// Palette URL: http://paletton.com/#uid=52P0u0kllll44tVcIpCtYh3OOcL */
+
+// Feel free to copy&paste color codes to your application */
+
+// As hex codes */
+
+$color-primary: #032222; // Main Primary color */
+$color-primary-2: #7d8f8f; // Secondary Primary color (2) */
+$color-primary-3: #a9bebe; // Tertiary Primary color (3) */
+
+$color-secondary: #8b5a22; // Main Secondary color */
+$color-secondary-2: #b32a2a; // Main Secondary color (2) */
+
+// As Base values */
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+$default-font-family: Catamaran, Arial;
+
+// GRID
+// change the values once here to equally effect the page
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

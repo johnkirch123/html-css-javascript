@@ -1,0 +1,49 @@
+.checkout {
+  width: 85%;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+  background-color: $color-primary-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  &__all {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.small-height {
+  height: 7rem;
+}
+
+.checkout__list {
+  width: 33%;
+  padding: 2rem;
+  text-align: center;
+  background-color: $color-primary-3;
+  height: 25rem;
+  margin: 3rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+
+  &--sub-total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--tax {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--total {
+    display: flex;
+    justify-content: space-between;
+  }
+}

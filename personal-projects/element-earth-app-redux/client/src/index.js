@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+
+import reducers from "./reducers";
+
 import App from "./components/App";
 import Products from "./components/Products";
 import Faqs from "./components/Faqs";
@@ -12,12 +17,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Social from "./components/Social";
 import Cart from "./components/Cart";
+import ProductDetail from "./components/ProductDetail";
 
 import * as serviceWorker from "./serviceWorker";
 
-let container = "container";
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+const container = "container";
 
-// refactor to a class to use state for Navbar
 class Root extends Component {
   state = {
     route: ""
@@ -111,6 +117,18 @@ class Root extends Component {
               <Route
                 component={props => {
                   return (
+                    <ProductDetail
+                      route={this.state.route}
+                      routeHandler={this.setRoute.bind(this)}
+                      {...props}
+                    />
+                  );
+                }}
+                path="/product-detail"
+              />
+              <Route
+                component={props => {
+                  return (
                     <Cart
                       route={this.state.route}
                       routeHandler={this.setRoute.bind(this)}
@@ -143,7 +161,12 @@ class Root extends Component {
 
 export default Root;
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <Root />
+  </Provider>,
+  document.getElementById("root")
+);
 serviceWorker.unregister();
 
 // Create React App - webpack - hot module reloading.

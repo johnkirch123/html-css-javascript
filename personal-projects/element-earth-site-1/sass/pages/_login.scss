@@ -1,9 +1,0 @@
-.login {
-  grid-row: 2 / 3;
-  display: grid;
-  grid-template-columns: repeat(6, 12vw);
-
-  &__form {
-    grid-column: 2 / -2;
-  }
-}

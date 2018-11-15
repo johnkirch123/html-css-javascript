@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { selectProductDetail } from "../actions/productDetail";
-import { productsList } from "../actions/products";
+import { productsList } from "../actions/productActions";
 import { bindActionCreators } from "redux";
 
 class ProductsList extends Component {

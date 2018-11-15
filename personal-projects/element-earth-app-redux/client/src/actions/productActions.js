@@ -1,6 +1,6 @@
 export function productsList(products) {
   return {
-    type: "PRODUCTS",
+    type: "GET_PRODUCTS",
     payload: products
   };
 }

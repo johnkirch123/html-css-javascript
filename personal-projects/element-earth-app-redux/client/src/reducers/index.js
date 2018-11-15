@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import ProductsReducer from "./../components/Products";
+import ProductsReducer from "./productsReducer";
 
 const rootReducer = combineReducers({
   products: ProductsReducer

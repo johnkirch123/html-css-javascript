@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { selectProductDetail } from "../actions/productDetail";
+import { productsList } from "../actions/products";
 import { bindActionCreators } from "redux";
 
 class ProductsList extends Component {
@@ -12,11 +13,7 @@ class ProductsList extends Component {
           <h4 className="products__product--heading">{product.name}</h4>
           <div className="featured__right">
             <p>{product.description}</p>
-            <Link
-              to={"Product-detail"}
-              onClick={this.props.selectProductDetail(product)}
-              className="featured__products--button"
-            >
+            <Link to={"Product-detail"} className="featured__products--button">
               Buy Now!
             </Link>
           </div>
@@ -33,7 +30,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ selectProductDetail }, dispatch);
+  return bindActionCreators({ productsList }, dispatch);
 };
 
 export default connect(

@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-
+import store from "./store";
 import reducers from "./reducers";
 
 import App from "./components/App";
@@ -21,7 +20,6 @@ import ProductDetail from "./components/ProductDetail";
 
 import * as serviceWorker from "./serviceWorker";
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
 const container = "container";
 
 class Root extends Component {
@@ -35,138 +33,135 @@ class Root extends Component {
   };
   render() {
     return (
-      <Router>
-        <React.Fragment>
-          <div className={container}>
-            <Navbar route={this.state.route} />
-            <Social />
-            <Switch>
-              <Route
-                component={props => {
-                  return (
-                    <App
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                exact
-                path="/"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Signin
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/signin"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Signup
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/signup"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Checkout
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/checkout"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Products
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/products"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Faqs
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/faqs"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <ProductDetail
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/product-detail"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Cart
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/cart"
-              />
-              <Route
-                component={props => {
-                  return (
-                    <Checkout
-                      route={this.state.route}
-                      routeHandler={this.setRoute.bind(this)}
-                      {...props}
-                    />
-                  );
-                }}
-                path="/checkout"
-              />
-            </Switch>
-          </div>
-          <Footer />
-        </React.Fragment>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <React.Fragment>
+            <div className={container}>
+              <Navbar route={this.state.route} />
+              <Social />
+              <Switch>
+                <Route
+                  component={props => {
+                    return (
+                      <App
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  exact
+                  path="/"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Signin
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/signin"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Signup
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/signup"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Checkout
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/checkout"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Products
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/products"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Faqs
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/faqs"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <ProductDetail
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/product-detail"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Cart
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/cart"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <Checkout
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/checkout"
+                />
+              </Switch>
+            </div>
+            <Footer />
+          </React.Fragment>
+        </Router>
+      </Provider>
     );
   }
 }
 
 export default Root;
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Root />
-  </Provider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Root />, document.getElementById("root"));
 serviceWorker.unregister();
 
 // Create React App - webpack - hot module reloading.

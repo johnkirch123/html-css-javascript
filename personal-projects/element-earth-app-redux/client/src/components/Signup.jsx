@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import axios from "axios";
 import { registerUser } from "../actions/authActions";
 
 class Signup extends Component {
@@ -19,6 +18,13 @@ class Signup extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+    console.log(this.state.errors);
+  }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -33,10 +39,6 @@ class Signup extends Component {
       password2: this.state.password2
     };
     this.props.registerUser(newUser);
-    // axios
-    //   .post("/api/users/register", newUser)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => this.setState({ errors: err.response.data }));
   }
 
   render() {
@@ -94,6 +96,9 @@ class Signup extends Component {
                   value={this.state.password2}
                   onChange={this.onChange}
                 />
+                {errors.password2 && (
+                  <div className={{ color: "red" }}>{errors.password2}</div>
+                )}
                 <label className="form__label">Re-enter Password</label>
               </div>
               <div className="form__group">
@@ -107,7 +112,18 @@ class Signup extends Component {
   }
 }
 
+Signup.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { registerUser }
 )(Signup);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Signin extends Component {
+class Login extends Component {
   constructor() {
     super();
 
@@ -14,6 +14,20 @@ class Signin extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(user);
+  }
+
   render() {
     const { routeHandler } = this.props;
     return (
@@ -22,31 +36,31 @@ class Signin extends Component {
           ? routeHandler(this.props.match.path)
           : ""}
         <div className="login__form">
-          <form action="#" className="form">
+          <form onSubmit={this.onSubmit} className="form">
             <h1 className="form__heading">Login</h1>
             <div className="form__group">
               <input
                 type="email"
+                name="email"
                 className="form__input"
                 placeholder="Email"
                 id="email"
-                required
+                value={this.state.email}
+                onChange={this.onChange}
               />
-              <label for="email" className="form__label">
-                Email
-              </label>
+              <label className="form__label">Email</label>
             </div>
             <div className="form__group">
               <input
                 type="password"
+                name="password"
                 className="form__input"
                 placeholder="Password"
                 id="password"
-                required
+                value={this.state.password}
+                onChange={this.onChange}
               />
-              <label for="password" className="form__label">
-                Password
-              </label>
+              <label className="form__label">Password</label>
             </div>
             <div className="form__group">
               <button className="btn btn--green">Login</button>
@@ -58,4 +72,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+export default Login;

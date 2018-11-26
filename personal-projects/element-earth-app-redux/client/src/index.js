@@ -10,8 +10,8 @@ import App from "./components/App";
 import Products from "./components/Products";
 import Faqs from "./components/Faqs";
 import Checkout from "./components/Checkout";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Social from "./components/Social";
@@ -56,26 +56,26 @@ class Root extends Component {
                 <Route
                   component={props => {
                     return (
-                      <Signin
+                      <Login
                         route={this.state.route}
                         routeHandler={this.setRoute.bind(this)}
                         {...props}
                       />
                     );
                   }}
-                  path="/signin"
+                  path="/login"
                 />
                 <Route
                   component={props => {
                     return (
-                      <Signup
+                      <Register
                         route={this.state.route}
                         routeHandler={this.setRoute.bind(this)}
                         {...props}
                       />
                     );
                   }}
-                  path="/signup"
+                  path="/register"
                 />
                 <Route
                   component={props => {

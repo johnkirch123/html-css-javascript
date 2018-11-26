@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 
 import eeLogo from "../img/ee-logo-transparent.svg";
 
-import { getNavbar } from "../utils/Utils";
-
 const HomeNavbar = () => (
   <nav className="nav">
     <div className="nav__logo">
@@ -30,12 +28,12 @@ const HomeNavbar = () => (
         </NavLink>
       </li>
       <li className="nav__list--item">
-        <NavLink to="/signup" className="nav__list--link">
-          Register
+        <NavLink to="/register" className="nav__list--link">
+          Signup
         </NavLink>
       </li>
       <li className="nav__list--item">
-        <NavLink to="/signin" className="nav__list--link">
+        <NavLink to="/login" className="nav__list--link">
           Login
         </NavLink>
       </li>
@@ -57,12 +55,12 @@ const BasicNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signup" className="navigation__list--link">
-          Register
+        <NavLink to="/register" className="navigation__list--link">
+          Signup
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signin" className="navigation__list--link">
+        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
@@ -90,8 +88,8 @@ const LoginNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signup" className="navigation__list--link">
-          Register
+        <NavLink to="/register" className="navigation__list--link">
+          Signup
         </NavLink>
       </li>
     </ul>
@@ -113,13 +111,13 @@ const FaqsNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signin" className="navigation__list--link">
+        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signup" className="navigation__list--link">
-          Register
+        <NavLink to="/register" className="navigation__list--link">
+          Signup
         </NavLink>
       </li>
     </ul>
@@ -146,7 +144,7 @@ const RegisterNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signin" className="navigation__list--link">
+        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
@@ -168,12 +166,12 @@ const CartNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signin" className="navigation__list--link">
+        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signup" className="navigation__list--link">
+        <NavLink to="/register" className="navigation__list--link">
           Register
         </NavLink>
       </li>
@@ -201,7 +199,7 @@ const CheckoutNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/signin" className="navigation__list--link">
+        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
@@ -216,9 +214,9 @@ class Navbar extends Component {
         return <HomeNavbar />;
       case "/products":
         return <BasicNavbar />;
-      case "/signin":
+      case "/login":
         return <LoginNavbar />;
-      case "/signup":
+      case "/register":
         return <RegisterNavbar />;
       case "/cart":
         return <CartNavbar />;

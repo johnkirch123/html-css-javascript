@@ -6,7 +6,8 @@ import { bindActionCreators } from "redux";
 
 class ProductsList extends Component {
   render() {
-    return this.props.products.map(product => {
+    const { products } = this.props.products;
+    return products.map(product => {
       return (
         <div className="products__product">
           <h4 className="products__product--heading">{product.name}</h4>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import classnames from "classnames";
 import { registerUser } from "../actions/authActions";
 
 class Register extends Component {
@@ -23,7 +24,6 @@ class Register extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
-    console.log(this.state.errors);
   }
 
   onChange(e) {
@@ -42,7 +42,7 @@ class Register extends Component {
     axios
       .post("/api/users/register", newUser)
       .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ errors: err.response.data }));
     // this.props.registerUser(newUser);
   }
 
@@ -62,48 +62,63 @@ class Register extends Component {
               <input
                 type="username"
                 name="username"
-                className="form__input"
+                className={classnames("form__input", {
+                  error: errors.username
+                })}
                 placeholder="Username"
                 value={this.state.name}
                 onChange={this.onChange}
               />
               <label className="form__label">Username</label>
+              {errors.username && (
+                <div className="errors">{errors.username}</div>
+              )}
             </div>
             <div className="form__group">
               <input
                 type="email"
                 name="email"
-                className="form__input"
+                className={classnames("form__input", {
+                  error: errors.email
+                })}
                 placeholder="Email"
                 value={this.state.email}
                 onChange={this.onChange}
               />
               <label className="form__label">Email</label>
+              {errors.email && <div className="errors">{errors.email}</div>}
             </div>
             <div className="form__group">
               <input
                 type="password"
                 name="password"
-                className="form__input"
+                className={classnames("form__input", {
+                  error: errors.password
+                })}
                 placeholder="Password"
                 value={this.state.password}
                 onChange={this.onChange}
               />
               <label className="form__label">Password</label>
+              {errors.password && (
+                <div className="errors">{errors.password}</div>
+              )}
             </div>
             <div className="form__group">
               <input
                 type="password"
                 name="password2"
-                className="form__input"
+                className={classnames("form__input", {
+                  error: errors.password2
+                })}
                 placeholder="Re-enter Password"
                 value={this.state.password2}
                 onChange={this.onChange}
               />
-              {errors.password2 && (
-                <div className={{ color: "red" }}>{errors.password2}</div>
-              )}
               <label className="form__label">Re-enter Password</label>
+              {errors.password2 && (
+                <div className="errors">{errors.password2}</div>
+              )}
             </div>
             <div className="form__group">
               <button className="btn btn--green">Register</button>

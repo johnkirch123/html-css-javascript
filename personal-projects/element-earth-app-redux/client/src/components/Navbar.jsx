@@ -18,11 +18,6 @@ const HomeNavbar = () => (
         </NavLink>
       </li>
       <li className="nav__list--item">
-        <NavLink to="/faqs" className="nav__list--link">
-          FAQs
-        </NavLink>
-      </li>
-      <li className="nav__list--item">
         <NavLink to="/products" className="nav__list--link">
           Products
         </NavLink>
@@ -34,33 +29,6 @@ const HomeNavbar = () => (
       </li>
       <li className="nav__list--item">
         <NavLink to="/login" className="nav__list--link">
-          Login
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-);
-
-const BasicNavbar = () => (
-  <nav className="navigation">
-    <div className="navigation__logo">
-      <NavLink to="/">
-        <img src={eeLogo} alt="Element Earth Logo" />
-      </NavLink>
-    </div>
-    <ul className="navigation__list">
-      <li className="navigation__list--item">
-        <NavLink to="/faqs" className="navigation__list--link">
-          FAQs
-        </NavLink>
-      </li>
-      <li className="navigation__list--item">
-        <NavLink to="/register" className="navigation__list--link">
-          Signup
-        </NavLink>
-      </li>
-      <li className="navigation__list--item">
-        <NavLink to="/login" className="navigation__list--link">
           Login
         </NavLink>
       </li>
@@ -83,8 +51,8 @@ const LoginNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/faqs" className="navigation__list--link">
-          FAQs
+        <NavLink to="/products" className="navigation__list--link">
+          Products
         </NavLink>
       </li>
       <li className="navigation__list--item">
@@ -96,7 +64,7 @@ const LoginNavbar = () => (
   </nav>
 );
 
-const FaqsNavbar = () => (
+const ProductsNavbar = () => (
   <nav className="navigation">
     <div className="navigation__logo">
       <NavLink to="/">
@@ -139,8 +107,8 @@ const RegisterNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/faqs" className="navigation__list--link">
-          FAQs
+        <NavLink to="/products" className="navigation__list--link">
+          Products
         </NavLink>
       </li>
       <li className="navigation__list--item">
@@ -161,8 +129,8 @@ const CartNavbar = () => (
     </div>
     <ul className="navigation__list">
       <li className="navigation__list--item">
-        <NavLink to="/faqs" className="navigation__list--link">
-          FAQs
+        <NavLink to="/products" className="navigation__list--link">
+          Products
         </NavLink>
       </li>
       <li className="navigation__list--item">
@@ -194,8 +162,8 @@ const CheckoutNavbar = () => (
         </NavLink>
       </li>
       <li className="navigation__list--item">
-        <NavLink to="/faqs" className="navigation__list--link">
-          FAQs
+        <NavLink to="/products" className="navigation__list--link">
+          Products
         </NavLink>
       </li>
       <li className="navigation__list--item">
@@ -212,8 +180,6 @@ class Navbar extends Component {
     switch (this.props.route) {
       case "/":
         return <HomeNavbar />;
-      case "/products":
-        return <BasicNavbar />;
       case "/login":
         return <LoginNavbar />;
       case "/register":
@@ -222,8 +188,8 @@ class Navbar extends Component {
         return <CartNavbar />;
       case "/checkout":
         return <CheckoutNavbar />;
-      case "/faqs":
-        return <FaqsNavbar />;
+      case "/products":
+        return <ProductsNavbar />;
       default:
         return <HomeNavbar />;
     }

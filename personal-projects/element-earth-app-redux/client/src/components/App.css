@@ -387,6 +387,8 @@ body {
 }
 .form__heading {
   font-size: 5rem;
+  margin-top: -10rem;
+  margin-bottom: 5rem;
 }
 .form__input {
   font-size: 2rem;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { registerUser } from "../actions/authActions";
@@ -32,18 +32,14 @@ class Register extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
     const newUser = {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-    axios
-      .post("/api/users/register", newUser)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data }));
-    // this.props.registerUser(newUser);
+
+    this.props.registerUser(newUser, this.props.history);
   }
 
   render() {
@@ -144,4 +140,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { registerUser }
-)(Register);
+)(withRouter(Register));

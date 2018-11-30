@@ -62,7 +62,7 @@ class Register extends Component {
                   error: errors.username
                 })}
                 placeholder="Username"
-                value={this.state.name}
+                value={this.state.username}
                 onChange={this.onChange}
               />
               <label className="form__label">Username</label>

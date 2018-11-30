@@ -16,7 +16,14 @@ export const registerUser = (userData, history) => dispatch => {
 export const loginUser = userData => dispatch => {
   axios
     .post("api/users/login", userData)
-    .then(res => console.log(res.data))
+    .then(res => {
+      // Save to localStorage
+      const { token } = res.data;
+      // Set token to localStorage
+      localStorage.setItem("jwtToken", token);
+      // Set token to Auth header
+      setAuthToken(token);
+    })
     .catch(err =>
       dispatch({
         type: GET_ERRORS,

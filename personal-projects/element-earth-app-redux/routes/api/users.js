@@ -79,12 +79,11 @@ router.post("/register", (req, res) => {
 // @access  Public
 router.post("/login", (req, res) => {
   const { isValid, errors } = validateLoginInput(req.body);
-
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  const email = req.body.email;
-  const password = req.body.password;
+  const { email } = req.body;
+  const { password } = req.body;
   //Find user by email with user model
   User.findOne({ email })
     .then(user => {

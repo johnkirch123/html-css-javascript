@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import image1 from "../img/product-1.jpg";
+
 class Cart extends Component {
   render() {
     const { routeHandler } = this.props;
@@ -14,7 +16,7 @@ class Cart extends Component {
           <div className="cart__items">
             <div className="cart__item">
               <div className="cart__item--image">
-                <img src="../../img/product-1.jpg" alt="product 1 image" />
+                <img src={image1} alt="product 1 image" />
               </div>
               <div className="cart__item--info">
                 <div className="cart__item--head">Product 1</div>
@@ -33,7 +35,7 @@ class Cart extends Component {
             </div>
             <div className="cart__item">
               <div className="cart__item--image">
-                <img src="../../img/product-1.jpg" alt="product 1 image" />
+                <img src={image1} alt="product 1 image" />
               </div>
               <div className="cart__item--info">
                 <div className="cart__item--head">Product 1</div>
@@ -52,7 +54,7 @@ class Cart extends Component {
             </div>
             <div className="cart__item">
               <div className="cart__item--image">
-                <img src="../../img/product-1.jpg" alt="product 1 image" />
+                <img src={image1} alt="product 1 image" />
               </div>
               <div className="cart__item--info">
                 <div className="cart__item--head">Product 1</div>

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../actions/authActions";
 
 import eeLogo from "../img/ee-logo-transparent.svg";
 
@@ -175,8 +178,52 @@ const CheckoutNavbar = () => (
   </nav>
 );
 
+const AuthenticatedNavbar = props => {
+  const onLogoutClick = e => {
+    e.preventDefault();
+    props.logoutUser();
+  };
+
+  return (
+    <nav className="navigation">
+      <div className="navigation__logo">
+        <NavLink to="/">
+          <img src={eeLogo} alt="Element Earth Logo" />
+        </NavLink>
+      </div>
+      <ul className="navigation__list">
+        <li className="nav__list--item">
+          <i className="fas fa-shopping-cart fa-2x" />
+          <NavLink to="/cart" className="nav__list--link">
+            Cart
+          </NavLink>
+        </li>
+        <li className="navigation__list--item">
+          <NavLink to="/products" className="navigation__list--link">
+            Products
+          </NavLink>
+        </li>
+        <li className="navigation__list--item">
+          <a
+            href="/"
+            onClick={onLogoutClick}
+            className="navigation__list--link"
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
 class Navbar extends Component {
   updateNavbar = route => {
+    const { isAuthenticated, user } = this.props.auth;
+    if (isAuthenticated) {
+      console.log("isAuthenticated", isAuthenticated);
+      return <AuthenticatedNavbar logoutUser={this.props.logoutUser} />;
+    }
     switch (this.props.route) {
       case "/":
         return <HomeNavbar />;
@@ -201,4 +248,16 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(Navbar);

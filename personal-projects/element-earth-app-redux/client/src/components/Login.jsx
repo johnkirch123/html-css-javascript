@@ -20,6 +20,10 @@ class Login extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/products");
+    }
+
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
@@ -32,16 +36,11 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const newUser = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
-    // console.log(newUser);
-    axios
-      .post("/api/users/login", newUser)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data }));
-    // this.props.registerUser(newUser);
+    this.props.loginUser(userData);
   }
 
   // onSubmit(e) {
@@ -109,7 +108,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  registerUser: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };

@@ -199,7 +199,7 @@ const AuthenticatedNavbar = props => {
             Cart
           </NavLink>
         </li>
-        <li className="navigation__list--item">
+        <li className="navigation__list--item nav__products">
           <NavLink to="/products" className="navigation__list--link">
             Products
           </NavLink>
@@ -213,7 +213,6 @@ const AuthenticatedNavbar = props => {
             <img
               src={user.avatar}
               alt={user.name}
-              style={{ width: "25px", marginRight: "5px", marginLeft: "1rem" }}
               title="You must have a Gravatar connected to your email to display an image"
             />
             Logout

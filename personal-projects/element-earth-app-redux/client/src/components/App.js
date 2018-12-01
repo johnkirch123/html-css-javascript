@@ -30,23 +30,26 @@ if (localStorage.jwtToken) {
   store.dispatch(setCurrentUser(decoded));
 }
 
-const container = "container";
-
 class Root extends Component {
   state = {
-    route: ""
+    route: "",
+    container: ""
   };
 
+  setContainer() {
+    if (this.state.route !== "/") this.setState({ container: "u-container" });
+    else this.setState({ container: "container" });
+  }
   setRoute = route => {
-    console.log(route);
     this.setState({ route });
   };
   render() {
+    let { route } = this.state;
     return (
       <Provider store={store}>
         <Router>
           <React.Fragment>
-            <div className={container}>
+            <div className={route !== "/" ? "u-container" : "container"}>
               <Navbar route={this.state.route} />
               <Social />
               <Switch>
@@ -161,7 +164,7 @@ class Root extends Component {
                 />
               </Switch>
             </div>
-            <Footer />
+            <Footer route={this.state.route} />
           </React.Fragment>
         </Router>
       </Provider>

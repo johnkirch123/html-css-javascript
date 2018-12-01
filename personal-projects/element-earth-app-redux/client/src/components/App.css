@@ -505,8 +505,12 @@ body {
   list-style: none;
   margin-right: 0.8rem;
 }
+.nav__products {
+  margin-right: 3rem;
+}
 .navigation__list--item {
   padding: 3rem 0;
+  position: relative;
 }
 .navigation__list--link {
   padding: 2rem;
@@ -516,40 +520,11 @@ body {
   font-weight: bold;
 }
 
-.footer__basic {
-  background-color: #032222;
-  grid-row: 3 / -1;
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
-}
-.footer__basic--contact {
-  width: 50%;
-  padding: 3rem 5rem;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-size: 1.8rem;
-}
-.footer__basic--contact-info > a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-}
-.footer__basic--social {
-  margin-right: 5rem;
-  align-self: center;
-}
-.footer__basic--social > a > img {
-  height: 8rem;
-  width: 8rem;
-  border-radius: 50%;
-  margin-right: 3rem;
-}
-.footer__basic--social > a > img:hover {
-  transform: scale(1.2);
-  transition: all 0.2s ease-in-out;
+.navigation__list--link > img {
+  width: 2.5rem;
+  position: absolute;
+  left: -1rem;
+  top: 3.2rem;
 }
 
 .container {
@@ -953,6 +928,9 @@ body {
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .footer__contact {
   width: 50%;

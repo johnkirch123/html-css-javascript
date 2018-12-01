@@ -179,6 +179,7 @@ const CheckoutNavbar = () => (
 );
 
 const AuthenticatedNavbar = props => {
+  const { user } = props;
   const onLogoutClick = e => {
     e.preventDefault();
     props.logoutUser();
@@ -209,6 +210,12 @@ const AuthenticatedNavbar = props => {
             onClick={onLogoutClick}
             className="navigation__list--link"
           >
+            <img
+              src={user.avatar}
+              alt={user.name}
+              style={{ width: "25px", marginRight: "5px", marginLeft: "1rem" }}
+              title="You must have a Gravatar connected to your email to display an image"
+            />
             Logout
           </a>
         </li>
@@ -222,7 +229,9 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
     if (isAuthenticated) {
       console.log("isAuthenticated", isAuthenticated);
-      return <AuthenticatedNavbar logoutUser={this.props.logoutUser} />;
+      return (
+        <AuthenticatedNavbar user={user} logoutUser={this.props.logoutUser} />
+      );
     }
     switch (this.props.route) {
       case "/":

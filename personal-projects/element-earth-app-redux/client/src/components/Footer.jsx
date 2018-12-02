@@ -3,7 +3,7 @@ import React from "react";
 import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
 
-const Footer = () => (
+const Footer = route => (
   <footer className="footer">
     <div className="footer__contact">
       <div className="footer__contact--address">

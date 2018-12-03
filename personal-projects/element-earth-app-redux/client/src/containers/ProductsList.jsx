@@ -12,7 +12,6 @@ class ProductsList extends Component {
   componentWillMount() {
     this.props.productsList();
     this.setState({ products: this.props.products });
-    console.log("products", this.state.products);
   }
   render() {
     const { products } = this.state;
@@ -37,7 +36,6 @@ ProductsList.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log("Mstp", state.products.products);
   return {
     products: state.products.products
   };

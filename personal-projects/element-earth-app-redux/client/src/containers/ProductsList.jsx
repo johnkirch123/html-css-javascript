@@ -2,11 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { productsList } from "../actions/productActions";
-import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
 
 class ProductsList extends Component {
+  state = {
+    products: []
+  };
+
+  componentWillMount() {
+    this.props.productsList();
+    this.setState({ products: this.props.products });
+    console.log("products", this.state.products);
+  }
   render() {
-    const { products } = this.props.products;
+    const { products } = this.state;
     return products.map(product => {
       return (
         <div className="products__product">
@@ -23,17 +32,18 @@ class ProductsList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    products: state.products
-  };
+ProductsList.propTypes = {
+  productsList: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ productsList }, dispatch);
+const mapStateToProps = state => {
+  console.log("Mstp", state.products.products);
+  return {
+    products: state.products.products
+  };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { productsList }
 )(ProductsList);

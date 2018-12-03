@@ -4,7 +4,13 @@ import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
 
 const Footer = route => (
-  <footer className="footer">
+  <footer
+    className={
+      window.innerHeight < document.body.clientHeight + 60
+        ? "footer__base"
+        : "footer"
+    }
+  >
     <div className="footer__contact">
       <div className="footer__contact--address">
         <p>Element Earth, Inc.</p>

@@ -149,7 +149,12 @@ body {
 
 .u-container {
   grid-column: 1 / -1;
-  margin: 0 auto;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .error {
@@ -164,6 +169,7 @@ body {
 
 .cart {
   width: 85%;
+  margin: 0 auto;
 }
 .cart__header {
   font-size: 5rem;
@@ -932,6 +938,14 @@ body {
   bottom: 0;
   width: 100%;
 }
+
+.footer__base {
+  background-color: #032222;
+  grid-row: 6 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
 .footer__contact {
   width: 50%;
   padding: 3rem 5rem;
@@ -964,14 +978,16 @@ body {
 .login {
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: repeat(6, 12vw);
+  grid-template-columns: repeat(6, 16.6vw);
 }
 .login__form {
   grid-column: 2 / -2;
+  margin-top: 5rem;
 }
 
 .products {
   padding: 0 5rem;
+  margin-top: 10rem;
 }
 .products__heading {
   font-size: 5rem;

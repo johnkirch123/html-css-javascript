@@ -186,7 +186,7 @@ const AuthenticatedNavbar = props => {
   };
 
   return (
-    <nav className="navigation">
+    <nav className="navigation sticky">
       <div className="navigation__logo">
         <NavLink to="/">
           <img src={eeLogo} alt="Element Earth Logo" />

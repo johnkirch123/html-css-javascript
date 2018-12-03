@@ -7,7 +7,7 @@ class Cart extends Component {
   render() {
     const { routeHandler } = this.props;
     return (
-      <section className="cart u-container u-center-text">
+      <section className="cart u-center-text">
         {this.props.route !== this.props.match.path
           ? routeHandler(this.props.match.path)
           : ""}

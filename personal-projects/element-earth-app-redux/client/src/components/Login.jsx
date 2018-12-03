@@ -58,7 +58,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <section className="login u-container u-center-text">
+      <section className="login u-center-text">
         {this.props.route !== this.props.match.path
           ? routeHandler(this.props.match.path)
           : ""}

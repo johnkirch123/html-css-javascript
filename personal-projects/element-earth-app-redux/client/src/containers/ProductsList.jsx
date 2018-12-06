@@ -22,7 +22,7 @@ class ProductsList extends Component {
           <div className="featured__right">
             <p>{product.description}</p>
             <Link to={"Product-detail"} className="featured__products--button">
-              Buy Now!
+              View Holds!
             </Link>
           </div>
         </div>

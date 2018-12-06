@@ -95,6 +95,39 @@ const ProductsNavbar = () => (
   </nav>
 );
 
+const ProductDetailNavbar = () => (
+  <nav className="navigation">
+    <div className="navigation__logo">
+      <NavLink to="/">
+        <img src={eeLogo} alt="Element Earth Logo" />
+      </NavLink>
+    </div>
+    <ul className="navigation__list">
+      <li className="nav__list--item">
+        <i className="fas fa-shopping-cart fa-2x" />
+        <NavLink to="/cart" className="nav__list--link">
+          Cart
+        </NavLink>
+      </li>
+      <li className="navigation__list--item">
+        <NavLink to="/products" className="navigation__list--link">
+          Products
+        </NavLink>
+      </li>
+      <li className="navigation__list--item">
+        <NavLink to="/login" className="navigation__list--link">
+          Login
+        </NavLink>
+      </li>
+      <li className="navigation__list--item">
+        <NavLink to="/register" className="navigation__list--link">
+          Signup
+        </NavLink>
+      </li>
+    </ul>
+  </nav>
+);
+
 const RegisterNavbar = () => (
   <nav className="navigation">
     <div className="navigation__logo">
@@ -245,6 +278,8 @@ class Navbar extends Component {
         return <CheckoutNavbar />;
       case "/products":
         return <ProductsNavbar />;
+      case "/product-detail":
+        return <ProductDetailNavbar />;
       default:
         return <HomeNavbar />;
     }

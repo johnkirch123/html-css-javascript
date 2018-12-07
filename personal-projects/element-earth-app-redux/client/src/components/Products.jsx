@@ -12,7 +12,6 @@ class Products extends Component {
         <h1 className="products__heading u-margin-top-medium">Products</h1>
         <div className="products__area">
           <ProductsList />
-          {/* This is the products list */}
         </div>
       </section>
     );

@@ -21,7 +21,11 @@ class ProductsList extends Component {
           <h4 className="products__product--heading">{product.name}</h4>
           <div className="featured__right">
             <p>{product.description}</p>
-            <Link to={"Product-detail"} className="featured__products--button">
+            <Link
+              to={"Product-detail"}
+              className="featured__products--button"
+              product={product}
+            >
               View Holds!
             </Link>
           </div>

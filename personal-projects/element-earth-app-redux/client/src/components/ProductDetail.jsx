@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ProductDetail extends Component {
   render() {
@@ -33,9 +34,9 @@ class ProductDetail extends Component {
               Autem explicabo facilis temporibus molestiae officia placeat
               dolorum, soluta unde eveniet iure! Ratione, non atque?
             </p>
-            <a href="#" className="u-margin-top-medium">
+            <Link to="#" className="u-margin-top-medium">
               View in 3D &rarr;
-            </a>
+            </Link>
             <button className="btn">Buy Now!</button>
             <button className="btn">Add to Cart</button>
           </div>

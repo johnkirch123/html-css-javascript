@@ -13,7 +13,7 @@ router.get("/test", (req, res) => res.json({ msg: "Products Works" }));
 router.get("/", (req, res) => {
   Product.find({}, (err, products) => {
     if (err) {
-      console.log(err);
+      res.json(err);
     } else {
       res.json(products);
     }

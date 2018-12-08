@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { GET_ERRORS } from "./types";
 
-export const productsList = () => dispatch => {
+export const getProducts = () => dispatch => {
   axios
     .get("api/products")
     .then(res => {

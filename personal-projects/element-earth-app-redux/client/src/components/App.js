@@ -6,7 +6,6 @@ import { setCurrentUser } from "../actions/authActions";
 
 import { Provider } from "react-redux";
 import store from "../store";
-import reducers from "../reducers";
 
 import Home from "../containers/Home";
 import Products from "./Products";

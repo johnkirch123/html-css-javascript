@@ -3,13 +3,12 @@ import React from "react";
 import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
 
-const Footer = route => (
-  <footer
-    className={
-      !(route === "/" || route === "/products") ? "footer__base" : "footer"
-    }
-  >
-    {console.log(route)}
+const checkFooter = route => {
+  return route === "/" || route === "/products" ? "footer__base" : "footer";
+};
+
+const Footer = props => (
+  <footer className={checkFooter(props.route)}>
     <div className="footer__contact">
       <div className="footer__contact--address">
         <p>Element Earth, Inc.</p>

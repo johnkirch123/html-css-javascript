@@ -6,7 +6,6 @@ class ProductsList extends Component {
     if (this.props.products === undefined) {
       return <h1>Loading...</h1>;
     } else {
-      console.log("Component Render", this.props.products);
       const { products } = this.props;
       return products.map(product => {
         return (

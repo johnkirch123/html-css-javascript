@@ -34,7 +34,6 @@ Products.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log("mapstatetoprops", state.products.products);
   return {
     products: state.products.products
   };

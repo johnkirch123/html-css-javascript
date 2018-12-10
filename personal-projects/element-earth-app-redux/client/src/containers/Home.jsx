@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
+import { getInstagramImages } from "../actions/instagramActions";
 
 import bg1 from "../img/bg1.jpg";
 import bg2 from "../img/bg2.jpg";
@@ -25,6 +29,13 @@ import sql from "../img/sql.png";
 import "../components/App.css";
 
 class App extends Component {
+  state = {
+    instagramImages: []
+  };
+  componentDidMount = () => {
+    this.props.getInstagramImages();
+  };
+
   render() {
     const { routeHandler } = this.props;
     return (
@@ -163,4 +174,16 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  instagramImages: PropTypes.array.isRequired,
+  getInstagramImages: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => {
+  instagramImages: state.instagramImages;
+};
+
+export default connect(
+  mapStateToProps,
+  { getInstagramImages }
+)(App);

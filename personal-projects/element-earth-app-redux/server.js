@@ -10,6 +10,7 @@ const passport = require("passport");
 // 3. create route/api constants for .js api files
 const users = require("./routes/api/users");
 const products = require("./routes/api/products");
+const instagramImages = require("./routes/api/instagram");
 
 // 1. initialize app
 const app = express();
@@ -42,6 +43,7 @@ require("./config/passport")(passport);
 // 3. use imported routes - users and products
 app.use("/api/users", users);
 app.use("/api/products", products);
+app.use("/api/instagram", instagramImages);
 
 // 1. Test route
 app.get("/", (req, res) => res.send("Test"));

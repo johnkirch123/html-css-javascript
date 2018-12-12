@@ -175,12 +175,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  instagramImages: PropTypes.array.isRequired,
+  // instagramImages: PropTypes.array.isRequired,
   getInstagramImages: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
-  instagramImages: state.instagramImages;
+  return { instagramImages: state.products };
+  // instagramImages: state.instagramImages;
 };
 
 export default connect(

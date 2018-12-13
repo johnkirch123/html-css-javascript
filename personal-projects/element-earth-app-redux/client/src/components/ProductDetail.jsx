@@ -63,7 +63,7 @@ ProductDetail.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    product: state.product
+    product: state.products.product
   };
 };
 

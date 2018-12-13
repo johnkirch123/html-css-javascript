@@ -1,7 +1,8 @@
 import { GET_PRODUCTS, GET_PRODUCT } from "../actions/types";
 
 const initialState = {
-  products: []
+  products: [],
+  product: {}
 };
 
 export default (state = initialState, action) => {

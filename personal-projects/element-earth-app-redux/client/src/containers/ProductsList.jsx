@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setProduct } from "../actions/productActions";
 
 class ProductsList extends Component {
+  componentDidMount() {}
+
   render() {
     if (this.props.products === undefined) {
       return <h1>Loading...</h1>;
@@ -14,7 +18,8 @@ class ProductsList extends Component {
             <div className="featured__right">
               <p>{product.description}</p>
               <Link
-                to={"product-detail"}
+                // onClick={this.setProduct}
+                to={`/${product._id}`}
                 className="featured__products--button"
               >
                 View Holds!

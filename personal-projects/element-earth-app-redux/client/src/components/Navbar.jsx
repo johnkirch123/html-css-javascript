@@ -265,6 +265,7 @@ class Navbar extends Component {
         <AuthenticatedNavbar user={user} logoutUser={this.props.logoutUser} />
       );
     }
+    console.log("update Navbar: ", route);
     switch (this.props.route) {
       case "/":
         return <HomeNavbar />;
@@ -278,7 +279,7 @@ class Navbar extends Component {
         return <CheckoutNavbar />;
       case "/products":
         return <ProductsNavbar />;
-      case "/product-detail":
+      case "/:id":
         return <ProductDetailNavbar />;
       default:
         return <HomeNavbar />;

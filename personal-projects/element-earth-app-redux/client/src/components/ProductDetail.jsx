@@ -1,13 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getProductById } from "../actions/productActions";
+import PropTypes from "prop-types";
 
 class ProductDetail extends Component {
+  componentDidMount() {
+    this.props.getProductById(this.props.match.params.id);
+  }
   render() {
-    const { product } = this.props;
-    console.log(product);
+    const {
+      available,
+      count,
+      description,
+      images,
+      modelNumber,
+      name,
+      price,
+      set,
+      type
+    } = this.props.product;
+    const { routeHandler } = this.props;
     return (
       <section className="product u-center-text">
-        <h1 className="product__heading u-center-text">Product Detail</h1>
+        {this.props.route !== this.props.match.path
+          ? routeHandler(this.props.match.path)
+          : ""}
+        <h1 className="product__heading u-center-text">{name}</h1>
         <div className="product__area">
           <div className="product__image">
             <div className="product__image--main" />
@@ -22,18 +41,9 @@ class ProductDetail extends Component {
             </div>
           </div>
           <div className="product__info">
-            <h1 className="product__info--heading">
-              Product Detail Information
-            </h1>
-            <h2 className="product__info--price">$45.00</h2>
-            <p className="product__info--description">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-              non aliquam alias a optio minima delectus provident aspernatur
-              eaque mollitia impedit consequatur pariatur eligendi commodi nisi
-              dolore, ea nihil veritatis odit molestiae adipisci est neque?
-              Autem explicabo facilis temporibus molestiae officia placeat
-              dolorum, soluta unde eveniet iure! Ratione, non atque?
-            </p>
+            <h1 className="product__info--heading">{modelNumber}</h1>
+            <h2 className="product__info--price">${price}</h2>
+            <p className="product__info--description">{description}</p>
             <Link to="#" className="u-margin-top-medium">
               View in 3D &rarr;
             </Link>
@@ -46,4 +56,18 @@ class ProductDetail extends Component {
   }
 }
 
-export default ProductDetail;
+ProductDetail.propTypes = {
+  getProductById: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => {
+  return {
+    product: state.product
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { getProductById }
+)(ProductDetail);

@@ -128,18 +128,6 @@ class Root extends Component {
                 <Route
                   component={props => {
                     return (
-                      <ProductDetail
-                        route={this.state.route}
-                        routeHandler={this.setRoute.bind(this)}
-                        {...props}
-                      />
-                    );
-                  }}
-                  path="/product-detail"
-                />
-                <Route
-                  component={props => {
-                    return (
                       <Cart
                         route={this.state.route}
                         routeHandler={this.setRoute.bind(this)}
@@ -160,6 +148,18 @@ class Root extends Component {
                     );
                   }}
                   path="/checkout"
+                />
+                <Route
+                  component={props => {
+                    return (
+                      <ProductDetail
+                        route={this.state.route}
+                        routeHandler={this.setRoute.bind(this)}
+                        {...props}
+                      />
+                    );
+                  }}
+                  path="/:id"
                 />
               </Switch>
             </div>

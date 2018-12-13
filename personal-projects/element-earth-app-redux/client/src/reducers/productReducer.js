@@ -1,7 +1,8 @@
-import { GET_PRODUCTS } from "../actions/types";
+import { GET_PRODUCTS, GET_PRODUCT } from "../actions/types";
 
 const initialState = {
-  products: []
+  products: [],
+  product: {}
 };
 
 export default (state = initialState, action) => {
@@ -11,6 +12,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         products: action.payload
+      };
+    case GET_PRODUCT:
+      return {
+        ...state,
+        prroduct: action.payload
       };
     default:
       return state;

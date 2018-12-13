@@ -835,7 +835,7 @@ body {
 .product__heading {
   font-size: 5rem;
   font-weight: 700;
-  margin-bottom: 5rem;
+  margin: 2rem;
 }
 .product__area {
   display: grid;
@@ -845,7 +845,7 @@ body {
   margin: 0 auto;
 }
 .product__image {
-  margin-left: 5rem;
+  margin-left: 13rem;
 }
 .product__image--main {
   background-color: #555;
@@ -866,11 +866,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 10rem;
-  margin-top: -3.5rem;
+  justify-content: space-around;
+  margin-left: 13rem;
 }
 .product__info--heading {
-  margin-top: 4rem;
   font-size: 3.4rem;
   font-weight: 700;
 }

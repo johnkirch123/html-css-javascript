@@ -9,7 +9,7 @@ import store from "../store";
 
 import Home from "../containers/Home";
 import Products from "./Products";
-import Faqs from "./Faqs";
+import AddProduct from "./AddProduct";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Register from "./Register";
@@ -116,14 +116,14 @@ class Root extends Component {
                 <Route
                   component={props => {
                     return (
-                      <Faqs
+                      <AddProduct
                         route={this.state.route}
                         routeHandler={this.setRoute.bind(this)}
                         {...props}
                       />
                     );
                   }}
-                  path="/faqs"
+                  path="/add-product"
                 />
                 <Route
                   component={props => {

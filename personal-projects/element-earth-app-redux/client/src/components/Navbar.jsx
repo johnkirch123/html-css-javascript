@@ -260,12 +260,10 @@ class Navbar extends Component {
   updateNavbar = route => {
     const { isAuthenticated, user } = this.props.auth;
     if (isAuthenticated) {
-      console.log("isAuthenticated", isAuthenticated);
       return (
         <AuthenticatedNavbar user={user} logoutUser={this.props.logoutUser} />
       );
     }
-    console.log("update Navbar: ", route);
     switch (this.props.route) {
       case "/":
         return <HomeNavbar />;
@@ -281,6 +279,8 @@ class Navbar extends Component {
         return <ProductsNavbar />;
       case "/:id":
         return <ProductDetailNavbar />;
+      case "/add-product":
+        return <CartNavbar />;
       default:
         return <HomeNavbar />;
     }

@@ -4,7 +4,9 @@ import facebook from "../img/Facebook.png";
 import instagram from "../img/Instagram.png";
 
 const checkFooter = route => {
-  return route === "/" || route === "/products" ? "footer__base" : "footer";
+  return route === "/" || route === "/products" || route === "/add-product"
+    ? "footer__base"
+    : "footer";
 };
 
 const Footer = props => (

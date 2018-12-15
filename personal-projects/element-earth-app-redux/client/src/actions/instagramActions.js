@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_ERRORS } from "./types";
+import { GET_ERRORS, GET_INSTAGRAM_IMAGES } from "./types";
 
 import instagramApiKey from "../keys/keys";
 
@@ -10,7 +10,10 @@ export const getInstagramImages = () => dispatch => {
       `https://api.instagram.com/v1/users/self/media/recent/?access_token=${instagramApiKey.instagramApiKey}`
     )
     .then(res => {
-      console.log(res.data.data);
+      dispatch({
+        type: GET_INSTAGRAM_IMAGES,
+        payload: res.data.data
+      })
     })
     .catch(err => {
       dispatch({

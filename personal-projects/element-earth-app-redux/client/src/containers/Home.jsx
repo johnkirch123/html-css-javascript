@@ -34,7 +34,11 @@ class App extends Component {
   };
   componentDidMount = () => {
     this.props.getInstagramImages();
+    this.setState({instagramImages: this.props.instagramImages});
   };
+  getImage(number) {
+
+  }
 
   render() {
     const { routeHandler } = this.props;
@@ -120,8 +124,9 @@ class App extends Component {
         </section>
 
         <div className="gallery">
+        {this.props.instagramImages !== [] ? console.log(this.props.instagramImages[0].images.standard_resolution.url) : console.log("Nothing")}
           <figure className="gallery__item gallery__item--1">
-            <img src={sass} alt="Sass" className="gallery__img" />
+            <img src={this.state.instagramImages ? this.props.instagramImages[0].images.standard_resolution.url : sass} alt="Sass" className="gallery__img" />
           </figure>
           <figure className="gallery__item gallery__item--2">
             <img src={js} alt="" className="gallery__img" />
@@ -175,12 +180,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  // instagramImages: PropTypes.array.isRequired,
-  getInstagramImages: PropTypes.func.isRequired
+  getInstagramImages: PropTypes.func.isRequired,
+  instagramImages: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
-  return { instagramImages: state.products };
+  console.log("MSTP: ", state.instagramImages.instagramImages);
+  return { instagramImages: state.instagramImages.instagramImages };
   // instagramImages: state.instagramImages;
 };
 

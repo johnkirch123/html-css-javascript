@@ -7,12 +7,10 @@ import instagramApiKey from "../keys/keys";
 export const getInstagramImages = () => dispatch => {
   axios
     .get(
-      `https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=${
-        instagramApiKey.instagramApiKey
-      }`
+      `https://api.instagram.com/v1/users/self/media/recent/?access_token=${instagramApiKey.instagramApiKey}`
     )
     .then(res => {
-      console.log(res);
+      console.log(res.data.data);
     })
     .catch(err => {
       dispatch({

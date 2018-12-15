@@ -27,7 +27,6 @@ export const getProductById = id => dispatch => {
       });
     })
     .catch(err => {
-      console.log("productActions: ", err);
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data

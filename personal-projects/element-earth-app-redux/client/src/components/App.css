@@ -907,72 +907,168 @@ body {
   filter: drop-shadow(2rem 2rem 5rem rgba(0, 0, 0, 0.6));
 }
 .gallery__item--1 {
+  transform: scale(1.1);
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
 }
 .gallery__item--2 {
+  transform: scale(1.1);
   grid-row: 1 / span 3;
   grid-column: 3 / span 3;
 }
 .gallery__item--3 {
+  transform: scale(1.1);
   grid-row: 1 / span 2;
   grid-column: 6 / span 1;
 }
 .gallery__item--4 {
+  transform: scale(1.1);
   grid-row: 1 / span 2;
   grid-column: 7 / span 2;
 }
 .gallery__item--5 {
+  transform: scale(1.1);
   grid-row: 3 / span 3;
   grid-column: 1 / span 2;
 }
 .gallery__item--6 {
+  transform: scale(1.1);
   grid-row: 4 / span 2;
   grid-column: 3 / span 2;
 }
 .gallery__item--7 {
+  transform: scale(1.1);
   grid-row: 4 / span 1;
   grid-column: 5 / span 1;
 }
 .gallery__item--8 {
+  transform: scale(1.1);
   grid-row: 3 / span 2;
   grid-column: 6 / span 2;
 }
 .gallery__item--9 {
+  transform: scale(1.1);
   grid-row: 5 / span 1;
   grid-column: 5 / span 3;
 }
 .gallery__item--10 {
+  transform: scale(1.1);
   grid-row: 3 / span 1;
   grid-column: 8 / span 1;
 }
 .gallery__item--11 {
+  transform: scale(1.1);
   grid-row: 4 / span 1;
   grid-column: 8 / span 1;
 }
 .gallery__item--12 {
+  transform: scale(1.1);
   grid-row: 5 / span 1;
   grid-column: 8 / span 1;
 }
 .gallery__item--13 {
+  transform: scale(1.1);
   grid-row: 6 / span 2;
   grid-column: 1 / span 1;
 }
 .gallery__item--14 {
+  transform: scale(1.1);
   grid-row: 6 / span 2;
   grid-column: 2 / span 2;
 }
 .gallery__item--15 {
+  transform: scale(1.1);
   grid-row: 6 / span 2;
   grid-column: 4 / span 2;
 }
 .gallery__item--16 {
+  transform: scale(1.1);
   grid-row: 6 / span 2;
   grid-column: 6 / span 3;
 }
 .gallery__item--17 {
+  transform: scale(1.1);
   grid-row: 6 / span 2;
   grid-column: 8 / span 1;
+}
+.gallery__item--1 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+.gallery__item--2:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--4:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--5:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--6:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--7:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--8:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--9:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--10:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--11:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--12:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--13:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--14:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--15:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--16:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+.gallery__item--17:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.3);
+  cursor: pointer;
 }
 .gallery__item:hover {
   z-index: 1;
@@ -987,10 +1083,10 @@ body {
   clip-path: polygon(8% 8%, 92.2% 8%, 92.2% 92.2%, 8% 92.2%);
   transition: all 0.5s;
 }
-.gallery img {
+.gallery > img {
   transform: scale(1.1);
 }
-.gallery img:hover {
+.gallery__img:hover {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: scale(1.3);
   cursor: pointer;

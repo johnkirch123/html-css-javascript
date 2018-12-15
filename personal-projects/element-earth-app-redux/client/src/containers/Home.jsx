@@ -35,7 +35,7 @@ class App extends Component {
   };
   componentDidMount = () => {
     this.props.getInstagramImages();
-    this.setState({instagramImages: this.props.instagramImages});
+    this.setState({ instagramImages: this.props.instagramImages });
   };
 
   render() {
@@ -121,7 +121,9 @@ class App extends Component {
           </div>
         </section>
 
-        <InstagramImages images={this.props.instagramImages} />
+        <div className="gallery">
+          <InstagramImages images={this.props.instagramImages} />
+        </div>
         {/* <div className="gallery">
           <figure className="gallery__item gallery__item--1">
             <a target="_blank" href={this.props.instagramImages[0].link}>
@@ -186,8 +188,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log("MSTP: ", state.instagramImages.instagramImages);
-  return { instagramImages: state.instagramImages.instagramImages };
+  return { instagramImages: state.instagramImages.instagramImages.data };
 };
 
 export default connect(

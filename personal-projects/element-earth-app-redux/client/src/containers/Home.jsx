@@ -27,6 +27,7 @@ import ml from "../img/ml.jpg";
 import bootstrap from "../img/bootstrap.svg";
 import sql from "../img/sql.png";
 import "../components/App.css";
+import InstagramImages from "../components/InstagramImages";
 
 class App extends Component {
   state = {
@@ -36,9 +37,6 @@ class App extends Component {
     this.props.getInstagramImages();
     this.setState({instagramImages: this.props.instagramImages});
   };
-  getImage(number) {
-
-  }
 
   render() {
     const { routeHandler } = this.props;
@@ -123,7 +121,8 @@ class App extends Component {
           </div>
         </section>
 
-        <div className="gallery">
+        <InstagramImages images={this.props.instagramImages} />
+        {/* <div className="gallery">
           <figure className="gallery__item gallery__item--1">
             <a target="_blank" href={this.props.instagramImages[0].link}>
               {console.log("Instagram Link: ", this.props.instagramImages[0].link)}
@@ -175,7 +174,7 @@ class App extends Component {
           <figure className="gallery__item gallery__item--16">
             <img src={sql} alt="" className="gallery__img" />
           </figure>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
@@ -189,7 +188,6 @@ App.propTypes = {
 const mapStateToProps = state => {
   console.log("MSTP: ", state.instagramImages.instagramImages);
   return { instagramImages: state.instagramImages.instagramImages };
-  // instagramImages: state.instagramImages;
 };
 
 export default connect(

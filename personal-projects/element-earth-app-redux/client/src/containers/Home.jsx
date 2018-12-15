@@ -124,9 +124,11 @@ class App extends Component {
         </section>
 
         <div className="gallery">
-        {this.props.instagramImages !== [] ? console.log(this.props.instagramImages[0].images.standard_resolution.url) : console.log("Nothing")}
           <figure className="gallery__item gallery__item--1">
-            <img src={this.state.instagramImages ? this.props.instagramImages[0].images.standard_resolution.url : sass} alt="Sass" className="gallery__img" />
+            <a target="_blank" href={this.props.instagramImages[0].link}>
+              {console.log("Instagram Link: ", this.props.instagramImages[0].link)}
+              <img src={this.state.instagramImages ? this.props.instagramImages[0].images.standard_resolution.url : sass} alt="Sass" className="gallery__img" />
+            </a>
           </figure>
           <figure className="gallery__item gallery__item--2">
             <img src={js} alt="" className="gallery__img" />

@@ -633,9 +633,7 @@ body {
 .featured__right {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
-  margin-left: 7rem;
-  margin-top: 12rem;
+  margin: 12rem 1rem 3rem 7rem;
 }
 .featured__right > p {
   font-size: 2rem;
@@ -1102,7 +1100,7 @@ body {
   width: 50rem;
   font-size: 6rem;
   transform: rotate(-90deg);
-  left: -25rem;
+  left: -22rem;
   top: 22rem;
 }
 .product__image {

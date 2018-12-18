@@ -17,6 +17,7 @@ class AddProduct extends Component {
       modelNumber: "",
       available: "",
       count: "",
+      image: [],
       errors: {}
     };
 
@@ -44,7 +45,8 @@ class AddProduct extends Component {
       set: this.state.set,
       modelNumber: this.state.modelNumber,
       available: this.state.available,
-      count: this.state.count
+      count: this.state.count,
+      image: this.state.image
     };
 
     this.props.addProduct(newProduct, this.props.history);
@@ -52,6 +54,7 @@ class AddProduct extends Component {
 
   openFileSystem(e) {
     e.preventDefault();
+    console.log("Browse clicked!");
   }
 
   render() {
@@ -201,7 +204,7 @@ class AddProduct extends Component {
               />
               <label className="form__label">Choose Image</label>
               {errors.image && <div className="errors">{errors.image}</div>}
-              <button onSubmit={this.openFileSystem}>Browse</button>
+              <button onClick={this.openFileSystem}>Browse</button>
             </div>
             <div className="form__group">
               <button className="btn btn--green">Add New Product</button>

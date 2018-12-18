@@ -63,6 +63,7 @@ router.put("/:id", (req, res) => {
 // @desc    Create a new product
 // @access  Private
 router.post("/", (req, res) => {
+  const image = req.body.image;
   const newProduct = new Product(
     ({
       name,

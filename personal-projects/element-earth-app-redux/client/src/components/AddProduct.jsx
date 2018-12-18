@@ -50,6 +50,10 @@ class AddProduct extends Component {
     this.props.addProduct(newProduct, this.props.history);
   }
 
+  openFileSystem(e) {
+    e.preventDefault();
+  }
+
   render() {
     const { errors } = this.state;
     const { routeHandler } = this.props;
@@ -60,7 +64,11 @@ class AddProduct extends Component {
           ? routeHandler(this.props.match.path)
           : ""}
         <div className="login__form">
-          <form onSubmit={this.onSubmit} className="form">
+          <form
+            onSubmit={this.onSubmit}
+            encType="multipart/form-data"
+            className="form"
+          >
             <h1 className="form__heading">Add New Item</h1>
             <div className="form__group">
               <input
@@ -179,6 +187,21 @@ class AddProduct extends Component {
               />
               <label className="form__label">Count</label>
               {errors.count && <div className="errors">{errors.count}</div>}
+            </div>
+            <div className="form__group">
+              <input
+                type="image"
+                name="image"
+                className={classnames("form__input", {
+                  error: errors.image
+                })}
+                placeholder="Images"
+                value={this.state.image}
+                onChange={this.onChange}
+              />
+              <label className="form__label">Choose Image</label>
+              {errors.image && <div className="errors">{errors.image}</div>}
+              <button onSubmit={this.openFileSystem}>Browse</button>
             </div>
             <div className="form__group">
               <button className="btn btn--green">Add New Product</button>

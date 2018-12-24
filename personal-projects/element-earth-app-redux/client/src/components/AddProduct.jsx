@@ -18,6 +18,7 @@ class AddProduct extends Component {
       available: "",
       count: "",
       image: [],
+      thumbnail: [],
       errors: {}
     };
 
@@ -46,21 +47,16 @@ class AddProduct extends Component {
       modelNumber: this.state.modelNumber,
       available: this.state.available,
       count: this.state.count,
-      image: this.state.image
+      image: this.state.image,
+      thumbnail: this.state.thumbnail
     };
 
     this.props.addProduct(newProduct, this.props.history);
   }
 
-  openFileSystem(e) {
-    e.preventDefault();
-    console.log("Browse clicked!");
-  }
-
   render() {
     const { errors } = this.state;
     const { routeHandler } = this.props;
-
     return (
       <section className="login u-container u-center-text">
         {this.props.route !== this.props.match.path
@@ -193,7 +189,7 @@ class AddProduct extends Component {
             </div>
             <div className="form__group">
               <input
-                type="image"
+                type="file"
                 name="image"
                 className={classnames("form__input", {
                   error: errors.image
@@ -202,12 +198,27 @@ class AddProduct extends Component {
                 value={this.state.image}
                 onChange={this.onChange}
               />
-              <label className="form__label">Choose Image</label>
               {errors.image && <div className="errors">{errors.image}</div>}
-              <button onClick={this.openFileSystem}>Browse</button>
+              <label className="form__label">Image</label>
+              <input
+                type="file"
+                name="thumbnail"
+                className={classnames("form__input", {
+                  error: errors.thumbnail
+                })}
+                placeholder="Thumbnail"
+                value={this.state.thumbnail}
+                onChange={this.onChange}
+              />
+              {errors.thumbnail && (
+                <div className="errors">{errors.thumbnail}</div>
+              )}
+              <label className="form__label">Thumbnail</label>
             </div>
             <div className="form__group">
-              <button className="btn btn--green">Add New Product</button>
+              <button className="btn btn--green u-margin-bottom-big">
+                Add New Product
+              </button>
             </div>
           </form>
         </div>

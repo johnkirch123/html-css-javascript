@@ -2,6 +2,9 @@ const express = require("express");
 const Product = require("../../models/Product");
 const router = express.Router();
 
+// Load Product Validation
+const validateProductInput = require("../../validation/product");
+
 // @route   GET api/products/test
 // @desc    Tests products route
 // @access  Public
@@ -45,7 +48,8 @@ router.put("/:id", (req, res) => {
     set,
     modelNumber,
     available,
-    count
+    count,
+    images
   } = req.body);
   Product.findById(req.params.id)
     .then(product => {
@@ -63,7 +67,11 @@ router.put("/:id", (req, res) => {
 // @desc    Create a new product
 // @access  Private
 router.post("/", (req, res) => {
-  const image = req.body.image;
+  const { isValid, errors } = validateProductInput(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+  // ADD CRYPTO LOGIC FOR IMAGE AND THUMBNAIL NAMES
   const newProduct = new Product(
     ({
       name,
@@ -73,10 +81,13 @@ router.post("/", (req, res) => {
       set,
       modelNumber,
       available,
-      count
+      count,
+      image
     } = req.body)
   );
-  newProduct.save().then(product => res.json(product));
+  console.log(`New Product api ${newProduct}`);
+  // SAVE CRYPTO NAME TO IMAGE ARRAY OF NAMES FOR SEARCHING ON PRODUCT DETAIL AND PRODUCTS PAGE
+  // newProduct.save().then(product => res.json(product));
 });
 
 /* TODO ALLOW ONLY ADMIN TO THIS ROUTE */

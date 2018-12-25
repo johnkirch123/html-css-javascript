@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { addProduct } from "../actions/productActions";
+import axios from "axios";
 
 class AddProduct extends Component {
   constructor() {
@@ -37,8 +38,9 @@ class AddProduct extends Component {
   }
 
   onImageChange(e) {
-    console.log(e.target.name);
-    // this.setState({ [e.target.name]: e.target.files[0].name });
+    this.setState({ [e.target.name]: e.target.files[0].name });
+
+    axios.post();
   }
 
   onSubmit(e) {

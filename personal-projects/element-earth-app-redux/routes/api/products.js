@@ -1,6 +1,8 @@
 const express = require("express");
 const Product = require("../../models/Product");
 const router = express.Router();
+const multer = require("multer");
+const upload = multer({ dest: "../../src/product-images" });
 
 // Load Product Validation
 const validateProductInput = require("../../validation/product");
@@ -66,7 +68,8 @@ router.put("/:id", (req, res) => {
 // @route   POST api/products/
 // @desc    Create a new product
 // @access  Private
-router.post("/", (req, res) => {
+router.post("/", upload.single(req.file), (req, res, next) => {
+  console.log("post api: ", req.file);
   const { isValid, errors } = validateProductInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
@@ -82,7 +85,8 @@ router.post("/", (req, res) => {
       modelNumber,
       available,
       count,
-      image
+      image,
+      thumbnail
     } = req.body)
   );
   console.log(`New Product api ${newProduct}`);

@@ -17,8 +17,8 @@ class AddProduct extends Component {
       modelNumber: "",
       available: "",
       count: "",
-      image: [],
-      thumbnail: [],
+      image: "",
+      thumbnail: "",
       errors: {}
     };
 
@@ -34,6 +34,11 @@ class AddProduct extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onImageChange(e) {
+    console.log(e.target.name);
+    // this.setState({ [e.target.name]: e.target.files[0].name });
   }
 
   onSubmit(e) {
@@ -196,7 +201,7 @@ class AddProduct extends Component {
                 })}
                 placeholder="Images"
                 value={this.state.image}
-                onChange={this.onChange}
+                onChange={this.onImageChange}
               />
               {errors.image && <div className="errors">{errors.image}</div>}
               <label className="form__label">Image</label>
@@ -208,7 +213,7 @@ class AddProduct extends Component {
                 })}
                 placeholder="Thumbnail"
                 value={this.state.thumbnail}
-                onChange={this.onChange}
+                onChange={this.onImageChange}
               />
               {errors.thumbnail && (
                 <div className="errors">{errors.thumbnail}</div>

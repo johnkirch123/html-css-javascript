@@ -35,6 +35,7 @@ export const getProductById = id => dispatch => {
 };
 
 export const setProductList = data => {
+  // Make redux changes
   return {
     type: GET_PRODUCTS,
     payload: data

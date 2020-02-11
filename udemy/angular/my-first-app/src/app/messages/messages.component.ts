@@ -11,6 +11,10 @@ export class MessageComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        console.log(Math.random());
+        this.toggleColor();
+    }
+    
+    toggleColor() {
+        this.message === 'Success' ? document.querySelector('.message').classList.add('success') : document.querySelector('.message').classList.add('warning');
     }
 }

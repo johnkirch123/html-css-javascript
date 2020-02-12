@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
     message:string = `${ Math.random() < 0.5 ? 'Success' : 'Warning' }`;
+    color: string = '';
 
     constructor() {}
 
@@ -15,6 +16,6 @@ export class MessageComponent implements OnInit {
     }
     
     toggleColor() {
-        this.message === 'Success' ? document.querySelector('.message').classList.add('success') : document.querySelector('.message').classList.add('warning');
+        this.color = this.message === 'Success' ? 'color: darkolivegreen;' : 'color: goldenrod;';
     }
 }

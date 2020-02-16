@@ -7,6 +7,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { MessageComponent } from './messages/messages.component';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component';
+import { TopHeaderComponent } from './top-header/top-header.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TwowaybindingComponent } from './twowaybinding/twowaybinding.component'
     ServerComponent,
     ServersComponent,
     MessageComponent,
-    TwowaybindingComponent
+    TwowaybindingComponent,
+    TopHeaderComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

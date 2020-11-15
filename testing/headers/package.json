@@ -4,10 +4,9 @@
   "description": "messing around with headers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "live-server": "live-server",
-    "watch-sass": "node-sass sass/main.scss css/style.css -w",
-    "start": "npm-run-all live-server watch-sass build:css",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "start": "npm-run-all live-server watch:sass",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "compress:css": "node-sass css/style.comp.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass compress:css"
@@ -15,11 +14,13 @@
   "author": "John Kirch",
   "license": "MIT",
   "dependencies": {
+    "postcss": "^8.0.5"
+  },
+  "devDependencies": {
     "autoprefixer": "^10.0.0",
     "concat": "^1.0.3",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.0.5",
     "postcss-cli": "^7.1.2"
   }
 }

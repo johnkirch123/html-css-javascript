@@ -35,6 +35,7 @@ export const getProductById = id => dispatch => {
 };
 
 export const setProductList = data => {
+  // Make redux changes
   return {
     type: GET_PRODUCTS,
     payload: data
@@ -43,7 +44,7 @@ export const setProductList = data => {
 
 export const addProduct = (productData, history) => dispatch => {
   axios
-    .post("api/products", productData)
+    .post("api/products/", productData)
     .then(res => history.push("/products"))
     .catch(err => {
       dispatch({

@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { addProduct } from "../actions/productActions";
+import axios from "axios";
 
 class AddProduct extends Component {
   constructor() {
@@ -17,6 +18,8 @@ class AddProduct extends Component {
       modelNumber: "",
       available: "",
       count: "",
+      image: "",
+      thumbnail: "",
       errors: {}
     };
 
@@ -34,6 +37,12 @@ class AddProduct extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  onImageChange(e) {
+    this.setState({ [e.target.name]: e.target.files[0].name });
+
+    axios.post();
+  }
+
   onSubmit(e) {
     e.preventDefault();
     const newProduct = {
@@ -44,7 +53,9 @@ class AddProduct extends Component {
       set: this.state.set,
       modelNumber: this.state.modelNumber,
       available: this.state.available,
-      count: this.state.count
+      count: this.state.count,
+      image: this.state.image,
+      thumbnail: this.state.thumbnail
     };
 
     this.props.addProduct(newProduct, this.props.history);
@@ -53,14 +64,17 @@ class AddProduct extends Component {
   render() {
     const { errors } = this.state;
     const { routeHandler } = this.props;
-
     return (
       <section className="login u-container u-center-text">
         {this.props.route !== this.props.match.path
           ? routeHandler(this.props.match.path)
           : ""}
         <div className="login__form">
-          <form onSubmit={this.onSubmit} className="form">
+          <form
+            onSubmit={this.onSubmit}
+            encType="multipart/form-data"
+            className="form"
+          >
             <h1 className="form__heading">Add New Item</h1>
             <div className="form__group">
               <input
@@ -181,7 +195,37 @@ class AddProduct extends Component {
               {errors.count && <div className="errors">{errors.count}</div>}
             </div>
             <div className="form__group">
-              <button className="btn btn--green">Add New Product</button>
+              <input
+                type="file"
+                name="image"
+                className={classnames("form__input", {
+                  error: errors.image
+                })}
+                placeholder="Images"
+                value={this.state.image}
+                onChange={this.onImageChange}
+              />
+              {errors.image && <div className="errors">{errors.image}</div>}
+              <label className="form__label">Image</label>
+              <input
+                type="file"
+                name="thumbnail"
+                className={classnames("form__input", {
+                  error: errors.thumbnail
+                })}
+                placeholder="Thumbnail"
+                value={this.state.thumbnail}
+                onChange={this.onImageChange}
+              />
+              {errors.thumbnail && (
+                <div className="errors">{errors.thumbnail}</div>
+              )}
+              <label className="form__label">Thumbnail</label>
+            </div>
+            <div className="form__group">
+              <button className="btn btn--green u-margin-bottom-big">
+                Add New Product
+              </button>
             </div>
           </form>
         </div>

@@ -1,6 +1,11 @@
 const express = require("express");
 const Product = require("../../models/Product");
 const router = express.Router();
+const multer = require("multer");
+const upload = multer({ dest: "../../src/product-images" });
+
+// Load Product Validation
+const validateProductInput = require("../../validation/product");
 
 // @route   GET api/products/test
 // @desc    Tests products route
@@ -45,7 +50,8 @@ router.put("/:id", (req, res) => {
     set,
     modelNumber,
     available,
-    count
+    count,
+    images
   } = req.body);
   Product.findById(req.params.id)
     .then(product => {
@@ -62,21 +68,31 @@ router.put("/:id", (req, res) => {
 // @route   POST api/products/
 // @desc    Create a new product
 // @access  Private
-router.post("/", (req, res) => {
-  const newProduct = new Product(
-    ({
-      name,
-      description,
-      price,
-      type,
-      set,
-      modelNumber,
-      available,
-      count
-    } = req.body)
-  );
-  newProduct.save().then(product => res.json(product));
-});
+// router.post("/", upload.single(req.file), (req, res, next) => {
+//   console.log("post api: ", req.file);
+//   const { isValid, errors } = validateProductInput(req.body);
+//   if (!isValid) {
+//     return res.status(400).json(errors);
+//   }
+//   // ADD CRYPTO LOGIC FOR IMAGE AND THUMBNAIL NAMES
+//   const newProduct = new Product(
+//     ({
+//       name,
+//       description,
+//       price,
+//       type,
+//       set,
+//       modelNumber,
+//       available,
+//       count,
+//       image,
+//       thumbnail
+//     } = req.body)
+//   );
+//   console.log(`New Product api ${newProduct}`);
+//   // SAVE CRYPTO NAME TO IMAGE ARRAY OF NAMES FOR SEARCHING ON PRODUCT DETAIL AND PRODUCTS PAGE
+//   // newProduct.save().then(product => res.json(product));
+// });
 
 /* TODO ALLOW ONLY ADMIN TO THIS ROUTE */
 // @route   DELETE api/products/:id

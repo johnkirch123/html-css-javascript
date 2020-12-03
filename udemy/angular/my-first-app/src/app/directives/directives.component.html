@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="toggleDisplay()">Display Details</button>
+            <p  *ngIf="isDisplayed">Secret Hint: Where did you go?</p>
+            <p *ngFor="let click of clicks; let i = index" 
+                [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+                [ngClass]="{'white-text': i >= 4}">{{ click }}</p>
+        </div>
+    </div>
+</div>
